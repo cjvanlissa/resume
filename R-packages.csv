@@ -1,0 +1,7 @@
+"url","repo","title","downloads","description","authors","date","role"
+"https://cran.r-project.org/package=metaforest","CRAN","metaforest","7017","Conduct random forests-based meta-analysis.","Van Lissa, C. J.","2017","Creator"
+"https://cran.r-project.org/package=tidyLPA","CRAN","tidyLPA","11484","Easily Carry Out Latent Profile Analysis.","Rosenberg, J. M., Van Lissa, C. J., Schmidt, J. A., Beymer, P. N., Anderson, D.","2018","Main developer"
+"https://cran.r-project.org/package=bain","CRAN","bain","4861","Test Bayesian informative hypotheses for frequentist analyses.","Gu, X., Hoijtink, H., Mulder, J., Van Lissa, C. J.","2018","Main developer"
+"https://cran.r-project.org/package=BFpack","CRAN","BFpack","126","Implementation of various default Bayes factors for testing statistical hypotheses.","Mulder, J., Van Lissa, C. J., et al.","2019","Main developer"
+"https://cran.r-project.org/package=MplusAutomation","CRAN","MplusAutomation","91662","Automate latent variable model estimation and interpretation using 'Mplus'.","Hallquist, M., Wiley, J., Van Lissa, C. J.","2019","Contributor"
+"https://www.github.com/cjvanlissa/gorica","GitHub","gorica",NA,"Test informative hypotheses using the generalized order restricted information criterion.","Van Lissa, C. J., Altinisik, Y., Kuiper, R. M.","2019","Main developer"

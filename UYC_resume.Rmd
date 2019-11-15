@@ -1,0 +1,78 @@
+---
+title: "UYC CV"
+author: "Caspar J. van Lissa"
+date: "11/12/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+print_cv <- function(table, ...){
+  Args <- as.list(match.call()[-c(1, 2)])
+  cat(apply(table, 1, function(x){
+    do.call(paste0, Args)
+}), sep = "  \n")
+}
+```
+
+## Experience
+
+```{r results = "asis", echo = FALSE}
+exp <- read.csv("Experience.csv", stringsAsFactors = FALSE)
+exp <- exp[-which(exp$Employer == "VU University, Amsterdam")[-1] , ]
+exp[exp$Employer == "VU University, Amsterdam", 3] <- "appointments at several departments"
+exp[exp$Employer == "VU University, Amsterdam", 5] <- "research assistant, tutor, Bachelor's thesis supervisor"
+exp[exp$Employer == "VU University, Amsterdam", 4] <- "Jul 2008 - Feb 2011"
+exp <- exp[order(exp$Order, decreasing = TRUE), ]
+print_cv(exp, x[2], " (", x[3], "), ", x[4], ": ", x[5])
+```
+
+## Publications
+
+```{r results = "asis", echo = FALSE}
+pub <- read.csv("My publications.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+pub$Item.Type <- ifelse(pub$Item.Type == "journalArticle", "", " (Book chapter)")
+num_authors <- lengths(regmatches(pub$Author, gregexpr(";", pub$Author)))
+pub$Author[num_authors > 4] <- gsub(";.+$", " et al\\.", pub$Author[num_authors > 4])
+pub$Title[grepl(":", pub$Title)] <- gsub(":.+$", "", pub$Title[grepl(":", pub$Title)])
+pub$order <- order(pub$Publication.Year, decreasing = TRUE, na.last = FALSE)
+pub$Publication.Year[is.na(pub$Publication.Year)] <- "in press"
+pub$DOI[!pub$DOI == ""] <- paste0("https://doi.org/", pub$DOI[!pub$DOI == ""])
+pub$DOI[pub$DOI == ""] <- pub$Url[pub$DOI == ""]
+pub <- data.frame(pub)
+pub <- pub[pub$order, c("Author", "Publication.Year", "Title", "Item.Type", "Publication.Title", "DOI")]
+pub$Number <- 1:nrow(pub)
+print_cv(pub, x[7], ". ", x[1], ", (", x[2], "). ", "[", x[3], "](", x[6], ")", x[4], ". *", x[5], "*")
+```
+
+## Software
+
+```{r results = "asis", echo = FALSE}
+pack <- data.frame(read.csv("R-packages.csv", stringsAsFactors = FALSE))
+pack <- pack[order(pack$downloads, decreasing = TRUE, na.last = TRUE), ]
+pack$downloads[!is.na(pack$downloads)] <- paste0(pack$downloads[!is.na(pack$downloads)], " downloads. ")
+pack$downloads[is.na(pack$downloads)] <- ""
+print_cv(pack, "**", x[3], "** [(", x[2], ")](", x[1], "). ", x[4], x[6], ", (", x[7], ").")
+```
+
+## Teaching
+
+```{r results = "asis", echo = FALSE}
+teach <- data.frame(read.csv("teaching_cleaned.csv", stringsAsFactors = FALSE))
+```
+
+Since my first teaching appointment in 2006, I have taught continuously, in `r nrow(teach)` courses, from the high-school to post-graduate (e.g., summer schools, pre-conference workshops) level. I have lectured in `r sum(teach$Hoorcolleges)` courses, taught tutorials in `r sum(teach$Werkgroepen)`, coordinated `r sum(teach$Coordinatie)`, and developed the material for `r sum(teach$Ontwikkeling.herziening)` courses.
+
+## Managerial activities
+
+```{r results = "asis", echo = FALSE}
+teach <- data.frame(read.csv("teaching_cleaned.csv", stringsAsFactors = FALSE))
+```
+
+Since my first teaching appointment in 2006, I have taught continuously, in `r nrow(teach)` courses, from the high-school to post-graduate (e.g., summer schools, pre-conference workshops) level. I have lectured in `r sum(teach$Hoorcolleges)` courses, taught tutorials in `r sum(teach$Werkgroepen)`, coordinated `r sum(teach$Coordinatie)`, and developed the material for `r sum(teach$Ontwikkeling.herziening)` courses.
+
+<!-- 
+
+managerial activities, outreach/public activities, international activities, and indicators of external recognition such as grants, awards, invited lectures, editorial board memberships, et cetera (max. 2 pages, excluding publication list). 
+
+-->
