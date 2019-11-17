@@ -4,3 +4,7 @@
 .Ruserdata
 *.xlsx
 educational_cv/
+*.docx
+*.doc
+*.RData
+private*.Rmd
