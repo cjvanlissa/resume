@@ -21,52 +21,61 @@ print_cv <- function(table, ...){
 library(knitr)
 library(kableExtra)
 library(dplyr)
+library(DT)
 library(scholar)
 id <- 'ub59lUMAAAAJ'
 
 ## Get his profile
 scholar_profile <- get_profile(id)
+scholar_pubs <- get_publications(id)
+scholar_pubs[sapply(scholar_pubs, is.factor)] <- lapply(scholar_pubs[sapply(scholar_pubs, is.factor)], as.character)
 ```
 
 ## Experience
 
 ```{r results = "asis", echo = FALSE}
 exp <- read.csv("Experience.csv", stringsAsFactors = FALSE)
-exp <- exp[order(exp$Order, decreasing = TRUE), ]
-exp$Begin <- gsub(" –.+$", "", exp$dates)
-exp$End <- gsub("^.+ – ", "", exp$dates)
+#exp <- exp[order(exp$Order, decreasing = TRUE), ]
+#exp$Begin <- gsub(" –.+$", "", exp$dates)
+#exp$End <- gsub("^.+ – ", "", exp$dates)
+exp <- exp[order(gsub("^\\w{3} ", "", exp$Begin), decreasing = TRUE), ]
 
+row.names(exp) <- NULL
 exp %>%  mutate(Employer=text_spec(Employer, "html", tooltip=Description)) %>% 
   mutate(Department=text_spec(Department, "html", tooltip=Description)) %>% 
   mutate(Position=text_spec(Position, "html", tooltip=Description)) %>% 
   mutate(Begin=text_spec(Begin, "html", tooltip=Description)) %>% 
   mutate(End=text_spec(End, "html", tooltip=Description)) %>% 
-    select(Employer,Department, Position, Begin, End) %>% kable("html", escape=F) %>% 
-    kable_styling(bootstrap_options = c("striped", "hover"))
+    select(Employer,Department, Position, Begin, End) %>% DT::datatable(escape = F)
 ```
 
 ## Publications
 
-According to Google Scholar, my work has been cited `r scholar_profile$total_cites` times (G-index: 15, H-index: `r scholar_profile$h_index`, i10-index: `r scholar_profile$i10_index`).
+[According to Google Scholar, my work has been cited `r scholar_profile$total_cites` times (G-index: 15, H-index: `r scholar_profile$h_index`, i10-index: `r scholar_profile$i10_index`).](https://scholar.google.com/citations?user=ub59lUMAAAAJ)
 
 ```{r results = "asis", echo = FALSE}
-pub <- read.csv("My publications.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+#pub <- read.csv("My publications.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+pub <- scholar_pubs
 #pub$Item.Type <- ifelse(pub$Item.Type == "journalArticle", "", " (Book chapter)")
-num_authors <- lengths(regmatches(pub$Author, gregexpr(";", pub$Author)))
-pub$Author[num_authors > 4] <- gsub(";.+$", " et al\\.", pub$Author[num_authors > 4])
-pub$Title[grepl(":", pub$Title)] <- gsub(":.+$", "", pub$Title[grepl(":", pub$Title)])
-pub$order <- order(pub$Publication.Year, decreasing = TRUE, na.last = FALSE)
-pub$Publication.Year[is.na(pub$Publication.Year)] <- "in press"
-pub$DOI[!pub$DOI == ""] <- paste0("https://doi.org/", pub$DOI[!pub$DOI == ""])
-pub$DOI[pub$DOI == ""] <- pub$Url[pub$DOI == ""]
-pub <- data.frame(pub)
-pub$Title <- paste0('<a href = "', pub$DOI, '">', pub$Title, '</a>')
-pub$Publication.Title <- paste0('*', pub$Publication.Title, '*')
-pub <- pub[pub$order, c("Author", "Publication.Year", "Title", "Publication.Title")]
+#num_authors <- lengths(regmatches(pub$Author, gregexpr(";", pub$Author)))
+num_authors <- lengths(regmatches(pub$author, gregexpr(",", pub$author)))
+pub$author[num_authors > 4] <- gsub(",.+$", " et al\\.", pub$author[num_authors > 4])
+pub$title[grepl(":", pub$title)] <- gsub(":.+$", "", pub$title[grepl(":", pub$title)])
+
+pub$year[is.na(pub$year)] <- "in press"
+
+pub$journal[!pub$journal == ""] <- paste0('<i>', pub$journal[!pub$journal == ""], '</i>')
+pub$journal[grepl("(mplusautomation|bain)", tolower(pub$title))] <- "<tt>CRAN</tt>"
+#pub$DOI[!pub$DOI == ""] <- paste0("https://doi.org/", pub$DOI[!pub$DOI == ""])
+#pub$DOI[pub$DOI == ""] <- pub$Url[pub$DOI == ""]
+#pub <- data.frame(pub)
+#pub$Title <- paste0('<a href = "', pub$DOI, '">', pub$Title, '</a>')
+
+pub <- pub[order(pub$cites, decreasing = TRUE), c("author", "year", "title", "journal", "cites")]
 rownames(pub) <- NULL
-names(pub) <- c("Authors", "Year", "Title", "Publication")
-pub %>% kable("html", escape=F) %>% 
-    kable_styling(bootstrap_options = c("striped", "hover"))
+names(pub) <- c("Authors", "Year", "Title", "Publication", "Cited")
+
+pub %>% DT::datatable(escape=F)
 ```
 
 ## Software
@@ -77,13 +86,12 @@ pack <- pack[order(pack$downloads, decreasing = TRUE, na.last = TRUE), ]
 pack$downloads[!is.na(pack$downloads)] <- paste0(pack$downloads[!is.na(pack$downloads)], " downloads. ")
 pack$downloads[is.na(pack$downloads)] <- ""
 pack$Title <- paste0('<a href = "', pack$url, '">', pack$title, '</a>')
-pack$Outlet <- paste0('*', pack$repo, '*')
+pack$Outlet <- paste0('<tt>', pack$repo, '</tt>')
 pack$Downloads <- pack$downloads
 pack$Authors <- pack$authors
 rownames(pack) <- NULL
 pack[,c("Authors", "Title", "Downloads", "Outlet")] %>%
-  kable("html", escape=F) %>% 
-    kable_styling(bootstrap_options = c("striped", "hover"))
+  DT::datatable(escape = FALSE)
 ```
 
 ## Teaching
@@ -101,12 +109,13 @@ Since my first teaching appointment in 2006, I have taught continuously, in `r n
 ```{r results = "asis", echo = FALSE}
 rownames(teach) <- NULL
 names(teach) <- c("Course", "Year", "Meetings", "students", "Lectures", "Tutorials", "Coordination", "Organization", "Syllabus", "Slides", "Digital aids", "Course development", "Details")
+teach[sapply(teach, is.logical)] <- lapply(teach[sapply(teach, is.logical)], function(x)ifelse(x, "Yes", ""))
 teach %>%
   kable("html", escape=F) %>% 
   add_header_above(c("Course details" = 4, "Responsibilities" = 8, " " =1)) %>%
     kable_styling(bootstrap_options = c("striped", "hover"))
 ```
-</details> 
+</details><br>
 
 I have supervised `r paste0(paste0(sum_sup[1:(length(sum_sup)-1)], " ", names(sum_sup)[1:(length(sum_sup)-1)], collapse = ", "), ", and ", tail(sum_sup, 1), " ", tail(names(sum_sup), 1), collapse = "")` students.
 
@@ -131,7 +140,7 @@ I am very active at international conferences, and have contributed to `r nrow(c
 <details>
   <summary>Click here for a detailed overview of conferences</summary>
 ```{r results = "asis", echo = FALSE}
-conf <- conf[order(conf$X, decreasing = TRUE), c("Organization", "City", "Country", "Date")]
+conf <- conf[order(conf$Date, decreasing = TRUE), c("Organization", "City", "Country", "Date")]
 rownames(conf) <- NULL
 conf %>%
   kable("html", escape=F) %>% 
@@ -142,15 +151,39 @@ conf %>%
 ## Managerial activities
 
 ```{r results = "asis", echo = FALSE}
-teach <- data.frame(read.csv("teaching_cleaned.csv", stringsAsFactors = FALSE))
-
+manage <- data.frame(read.csv("managerial.csv", stringsAsFactors = FALSE))
+manage <- manage[, c("Activity", "Start", "End", "Category")]
+manage %>%  DT::datatable(escape = F)
 ```
 
-Since my first teaching appointment in 2006, I have taught continuously, in `r nrow(teach)` courses, from the high-school to post-graduate (e.g., summer schools, pre-conference workshops) level. I have lectured in `r sum(teach$Hoorcolleges)` courses, taught tutorials in `r sum(teach$Werkgroepen)`, coordinated `r sum(teach$Coordinatie)`, and developed the material for `r sum(teach$Ontwikkeling.herziening)` courses. Additionally, I have supervised 
+## International experience
 
-<!-- 
+```{r results = "asis", echo = FALSE}
+int <- data.frame(read.csv("international.csv", stringsAsFactors = FALSE))
+int %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Details)) %>% 
+  mutate(Country=text_spec(Country, "html", tooltip=Details)) %>% 
+  mutate(Date=text_spec(Date, "html", tooltip=Details)) %>% 
+  select(-Details) %>%
+  DT::datatable(escape = F)
+```
 
-managerial activities, outreach/public activities, international activities, and indicators of external recognition such as grants, awards, invited lectures, editorial board memberships, et cetera (max. 2 pages, excluding publication list). 
+## Invited lectures
 
+```{r results = "asis", echo = FALSE}
+invited <- data.frame(read.csv("invited.csv", stringsAsFactors = FALSE))
+invited %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Topic)) %>% 
+  mutate(Year=text_spec(Year, "html", tooltip=Topic)) %>% 
+  mutate(City=text_spec(City, "html", tooltip=Topic)) %>% 
+  mutate(Country=text_spec(Country, "html", tooltip=Topic)) %>% 
+  select(Institute, City, Country, Year) %>%
+  DT::datatable(escape = F)
+```
 
--->
+# Funding
+
+```{r results = "asis", echo = FALSE}
+grant <- data.frame(read.csv("funding_acquired.csv", stringsAsFactors = FALSE))
+grant$Date <- as.Date(grant$Date, format = "%d-%m-%Y")
+grant$Date <- format.Date(grant$Date, "%b %Y")
+grant %>% DT::datatable(escape = FALSE)
+```

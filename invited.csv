@@ -1,16 +1,12 @@
-"","Organization","Year","City","Country","Topic"
-"1","Summer school meta-analysis, Aix*Marseille University","2019","Aix-en-Provence","FR","Summer school meta-analysis"
-"2","Pre-conference workshop on MetaForest, EARA","2018","Ghent","BE","Pre-conference workshop on meta-analysis"
-"3","Symposium Systematic Reviewing 3.0, lecture on MetaForest","2018","Utrecht","NL","MetaForest"
-"4","University of Texas at Austin, guest lecture on MetaForest","2017","Austin","US","MetaForest"
-"5","UvA, guest lecture on MetaForest","2017","Amsterdam","NL","MetaForest"
-"6","Human Technology Interaction, TU Eindhoven","2017","Eindhoven","NL","Variance partialing"
-"7","Centre for Child and Family Studies","2017","Leiden","NL","Father involvement"
-"8","NIAS Institute: Relationships, Technology & Health","2015","Wassenaar","NL","Empathy"
-"9","Invited speaker at UNO SPIT-Lab","2014","New Orleans","US","Empathy and adolescent-parent conflict resolution"
-"10","Empathy symposium “Understanding Each Other” (co-organizer)","2014","Utrecht","NL","Empathy and adolescent-parent conflict resolution"
-"11","KLI Empathy symposium (organizer)","2014","Utrecht","NL","Empathy and adolescent-parent conflict resolution"
-"12","Consortium on Individual Development kick off","2013","Utrecht","NL","Intergenerational transmission of empathy"
-"13","CAS Research Day","2012","Utrecht","NL","Intergenerational transmission of empathy"
-"14","William James Symposium","2012","Utrecht","NL","Intergenerational transmission of empathy"
-"15","Invited speaker at Brain & Development Lab (Eveline Crone)","2012","Leiden","NL","Intergenerational transmission of empathy"
+Institute,Year,City,Country,Topic
+Aix*Marseille University,2019,Aix-en-Provence,FR,Workshop on meta-analysis
+Tilburg University,2019,Tilburg,NL,Guest lecture on mixture models
+EARA,2018,Ghent,BE,Pre-conference workshop on meta-analysis
+Systematic Reviewing 3.0,2018,Utrecht,NL,MetaForest
+University of Texas at Austin,2017,Austin,US,MetaForest
+UvA,2017,Amsterdam,NL,MetaForest
+"Human Technology Interaction, TU Eindhoven",2017,Eindhoven,NL,Variance partialing
+Centre for Child and Family Studies,2017,Leiden,NL,Father involvement
+UNO SPIT-Lab,2014,New Orleans,US,Empathy and adolescent-parent conflict resolution
+William James Symposium,2012,Utrecht,NL,Intergenerational transmission of empathy
+Brain & Development Lab (Eveline Crone),2012,Leiden,NL,Intergenerational transmission of empathy
