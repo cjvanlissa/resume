@@ -81,8 +81,23 @@ edu %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Description)) %>%
 pub <- scholar_pubs
 #pub$Item.Type <- ifelse(pub$Item.Type == "journalArticle", "", " (Book chapter)")
 #num_authors <- lengths(regmatches(pub$Author, gregexpr(";", pub$Author)))
-num_authors <- lengths(regmatches(pub$author, gregexpr(",", pub$author)))
-pub$author[num_authors > 4] <- gsub(",.+$", " et al\\.", pub$author[num_authors > 4])
+# Format authors in APA style
+authors <- sapply(strsplit(pub$author, ","), function(x){
+  #browser()
+  initials <- gsub("^(.+?)\\s.*$", "\\1", trimws(x))
+  initials <- sapply(initials, function(i){
+    paste0(substring(i, seq(1, nchar(i), 1), seq(1, nchar(i), 1)), ".", collapse = " ")
+  })
+  last <- gsub("^.+?\\s", "", trimws(x))
+  paste0(last, ", ", initials, collapse = "; ")
+})
+authors <- gsub(";(?= [a-zA-Z ]+, ([A-Z]\\.){1,}$)", "; &", authors, perl = TRUE)
+pub$author <- gsub("\\.{3}, \\.{2} \\.{2} \\.{2}", "et al\\.", authors)
+# Abbreviate authors
+num_authors <- lengths(regmatches(pub$author, gregexpr(";", pub$author)))
+pub$author[num_authors > 4] <- gsub(";.+$", "; et al\\.", pub$author[num_authors > 4])
+pub$author <- gsub("van Lissa", "Van Lissa", pub$author)
+pub$author <- gsub(";", ",", pub$author)
 pub$title[grepl(":", pub$title)] <- gsub(":.+$", "", pub$title[grepl(":", pub$title)])
 
 pub$year[is.na(pub$year)] <- "in press"
