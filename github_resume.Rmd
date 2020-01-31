@@ -103,7 +103,7 @@ pub$title[grepl(":", pub$title)] <- gsub(":.+$", "", pub$title[grepl(":", pub$ti
 pub$year[is.na(pub$year)] <- "in press"
 
 pub$journal[!pub$journal == ""] <- paste0('<i>', pub$journal[!pub$journal == ""], '</i>')
-pub$journal[grepl("(mplusautomation|bain)", tolower(pub$title))] <- "<tt>CRAN</tt>"
+pub$journal[grepl("(mplusautomation|bain|gorica)", tolower(pub$title))] <- "<tt>CRAN</tt>"
 #pub$DOI[!pub$DOI == ""] <- paste0("https://doi.org/", pub$DOI[!pub$DOI == ""])
 #pub$DOI[pub$DOI == ""] <- pub$Url[pub$DOI == ""]
 #pub <- data.frame(pub)
@@ -164,7 +164,9 @@ I have supervised `r paste0(paste0(sum_sup[1:(length(sum_sup)-1)], " ", names(su
   <summary>Click here for a detailed overview of supervised students</summary>
 ```{r results = "asis", echo = FALSE}
 rownames(super) <- NULL
-super %>%
+super$Level <- ordered(super$Level, levels = c("PhD", "Master", "Bachelor"))
+super <- super[order(super$Level), ]
+super[, c("Students", "Description", "Details", "Institute", "Level")] %>%
   kable("html", escape=F) %>% 
     kable_styling(bootstrap_options = c("striped", "hover"))
 ```
@@ -212,6 +214,7 @@ int %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Details)) %>%
 
 ```{r results = "asis", echo = FALSE}
 invited <- data.frame(read.csv("invited.csv", stringsAsFactors = FALSE))
+rownames(invited) <- NULL
 invited %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Topic)) %>% 
   mutate(Year=text_spec(Year, "html", tooltip=Topic)) %>% 
   mutate(City=text_spec(City, "html", tooltip=Topic)) %>% 
