@@ -1,7 +1,7 @@
 ---
 title: "Caspar J. van Lissa"
-subtitle: "Veni-funded developmental data scientist, using machine learning to predict teenagers' emotional problems"
-date: "11/30/2019"
+subtitle: "Veni-funded developmental data scientist and Open Science faculty ambassador. Using machine learning to predict teenagers' emotional problems"
+date: "`r Sys.Date()`"
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs", output_file = "index.html") })    
 output:
@@ -220,13 +220,14 @@ invited %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Topic)) %>%
   mutate(City=text_spec(City, "html", tooltip=Topic)) %>% 
   mutate(Country=text_spec(Country, "html", tooltip=Topic)) %>% 
   select(Institute, City, Country, Year) %>%
-  DT::datatable(escape = F)
+  DT::datatable(escape = F,options = list(dom = 't'), rownames = FALSE)
 ```
 
 # Funding
 
 ```{r results = "asis", echo = FALSE}
-grant <- data.frame(read.csv("funding_acquired.csv", stringsAsFactors = FALSE))
+grant <- data.frame(read.csv("funding_acquired.csv", stringsAsFactors = FALSE), check.names = F)
+names(grant) <- gsub("\\.", " ", names(grant))
 grant$Date <- as.Date(grant$Date, format = "%d-%m-%Y")
 grant$Date <- format.Date(grant$Date, "%b %Y")
 grant %>% DT::datatable(escape = FALSE,options = list(dom = 't'), rownames = FALSE)
