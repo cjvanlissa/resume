@@ -135,6 +135,58 @@ pack[,c("Authors", "Title", "Downloads", "Outlet")] %>%
   DT::datatable(escape = FALSE, options = list(dom = 't'))
 ```
 
+## Managerial activities
+
+```{r results = "asis", echo = FALSE}
+manage <- data.frame(read.csv("managerial.csv", stringsAsFactors = FALSE))
+manage <- manage[, c("Activity", "Start", "End", "Category")]
+manage %>%  DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
+```
+
+## International experience
+
+```{r results = "asis", echo = FALSE}
+int <- data.frame(read.csv("international.csv", stringsAsFactors = FALSE))
+int %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Details)) %>% 
+  mutate(Country=text_spec(Country, "html", tooltip=Details)) %>% 
+  mutate(Date=text_spec(Date, "html", tooltip=Details)) %>% 
+  select(-Details) %>%
+  DT::datatable(escape = F,options = list(dom = 't'), rownames = FALSE)
+```
+
+## Invited lectures
+
+```{r results = "asis", echo = FALSE}
+invited <- data.frame(read.csv("invited.csv", stringsAsFactors = FALSE))
+rownames(invited) <- NULL
+invited %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Topic)) %>% 
+  mutate(Year=text_spec(Year, "html", tooltip=Topic)) %>% 
+  mutate(City=text_spec(City, "html", tooltip=Topic)) %>% 
+  mutate(Country=text_spec(Country, "html", tooltip=Topic)) %>% 
+  select(Institute, City, Country, Year) %>%
+  DT::datatable(escape = F,options = list(dom = 't'), rownames = FALSE)
+```
+
+## Funding
+
+```{r results = "asis", echo = FALSE}
+grant <- data.frame(read.csv("funding_acquired.csv", stringsAsFactors = FALSE), check.names = F)
+names(grant) <- gsub("\\.", " ", names(grant))
+grant$Date <- as.Date(grant$Date, format = "%d-%m-%Y")
+grant$Date <- format.Date(grant$Date, "%b %Y")
+grant %>% DT::datatable(escape = FALSE,options = list(dom = 't'), rownames = FALSE)
+```
+
+## Collaborations
+
+```{r results = "asis", echo = FALSE}
+collab <- data.frame(read.csv("Collaborations.csv", stringsAsFactors = FALSE))
+names(collab)[3] <- "Key collaborator"
+collab %>%  mutate(Organization=text_spec(Organization, "html", tooltip=Purpose)) %>% 
+  mutate("Key collaborator"=text_spec(collab[["Key collaborator"]], "html", tooltip=Purpose)) %>%
+  select(Organization, "Key collaborator") %>% DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
+```
+
 ## Teaching
 
 ```{r results = "asis", echo = FALSE}
@@ -190,55 +242,3 @@ conf %>%
     kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 </details>
-
-## Managerial activities
-
-```{r results = "asis", echo = FALSE}
-manage <- data.frame(read.csv("managerial.csv", stringsAsFactors = FALSE))
-manage <- manage[, c("Activity", "Start", "End", "Category")]
-manage %>%  DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
-```
-
-## International experience
-
-```{r results = "asis", echo = FALSE}
-int <- data.frame(read.csv("international.csv", stringsAsFactors = FALSE))
-int %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Details)) %>% 
-  mutate(Country=text_spec(Country, "html", tooltip=Details)) %>% 
-  mutate(Date=text_spec(Date, "html", tooltip=Details)) %>% 
-  select(-Details) %>%
-  DT::datatable(escape = F,options = list(dom = 't'), rownames = FALSE)
-```
-
-## Invited lectures
-
-```{r results = "asis", echo = FALSE}
-invited <- data.frame(read.csv("invited.csv", stringsAsFactors = FALSE))
-rownames(invited) <- NULL
-invited %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Topic)) %>% 
-  mutate(Year=text_spec(Year, "html", tooltip=Topic)) %>% 
-  mutate(City=text_spec(City, "html", tooltip=Topic)) %>% 
-  mutate(Country=text_spec(Country, "html", tooltip=Topic)) %>% 
-  select(Institute, City, Country, Year) %>%
-  DT::datatable(escape = F,options = list(dom = 't'), rownames = FALSE)
-```
-
-# Funding
-
-```{r results = "asis", echo = FALSE}
-grant <- data.frame(read.csv("funding_acquired.csv", stringsAsFactors = FALSE), check.names = F)
-names(grant) <- gsub("\\.", " ", names(grant))
-grant$Date <- as.Date(grant$Date, format = "%d-%m-%Y")
-grant$Date <- format.Date(grant$Date, "%b %Y")
-grant %>% DT::datatable(escape = FALSE,options = list(dom = 't'), rownames = FALSE)
-```
-
-# Collaborations
-
-```{r results = "asis", echo = FALSE}
-collab <- data.frame(read.csv("Collaborations.csv", stringsAsFactors = FALSE))
-names(collab)[3] <- "Key collaborator"
-collab %>%  mutate(Organization=text_spec(Organization, "html", tooltip=Purpose)) %>% 
-  mutate("Key collaborator"=text_spec(collab[["Key collaborator"]], "html", tooltip=Purpose)) %>%
-  select(Organization, "Key collaborator") %>% DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
-```
