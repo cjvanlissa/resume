@@ -29,6 +29,7 @@ library(dplyr)
 library(DT)
 library(scholar)
 library(dlstats)
+library(renv)
 id <- 'ub59lUMAAAAJ'
 
 ## Get his profile
@@ -74,7 +75,7 @@ edu %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Description)) %>%
 
 ## Publications
 
-[According to Google Scholar, my work has been cited `r scholar_profile$total_cites` times (G-index: `r calculate_g(scholar_pubs)`, H-index: `r scholar_profile$h_index`, i10-index: `r scholar_profile$i10_index`).](https://scholar.google.com/citations?user=ub59lUMAAAAJ)
+According to [Google Scholar](https://scholar.google.com/citations?user=ub59lUMAAAAJ), my work has been cited `r scholar_profile$total_cites` times (G-index: `r calculate_g(scholar_pubs)`, H-index: `r scholar_profile$h_index`, i10-index: `r scholar_profile$i10_index`).
 
 ```{r results = "asis", echo = FALSE}
 #pub <- read.csv("My publications.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
@@ -186,6 +187,26 @@ collab %>%  mutate(Organization=text_spec(Organization, "html", tooltip=Purpose)
   mutate("Key collaborator"=text_spec(collab[["Key collaborator"]], "html", tooltip=Purpose)) %>%
   select(Organization, "Key collaborator") %>% DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
 ```
+
+## Reviewer & Editorial experience
+
+```{r}
+rev <- read.csv("review.csv", stringsAsFactors = FALSE, header = FALSE)
+names(rev) <- c("N", "Name", "Category")
+rev_tab <- tapply(rev$N, factor(rev$Category), sum)
+```
+
+I am Statistical Consulting Editor for [Child Development](https://srcd.onlinelibrary.wiley.com/journal/14678624), and have reviewed `r rev_tab["Journal"]` journal articles, `r rev_tab["Conference"]` conference abstracts, and `r rev_tab["Funding body"]` grant applications. 
+
+<details>
+  <summary>Click here for a detailed overview of reviewing activities</summary>
+```{r results = "asis", echo = FALSE}
+rev %>%
+  kable("html", escape=F) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"))
+```
+</details><br>
+
 
 ## Teaching
 
