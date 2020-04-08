@@ -1,6 +1,6 @@
 ---
 title: "Caspar J. van Lissa"
-subtitle: "Veni-funded developmental data scientist and Open Science faculty ambassador. Using machine learning to predict teenagers' emotional problems"
+subtitle: "Veni-funded developmental data scientist, Open Science faculty ambassador, statistical consulting editor. Using machine learning to predict teenagers' emotional problems"
 date: "`r Sys.Date()`"
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs", output_file = "index.html") })    
@@ -12,6 +12,15 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE)
+
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(DT)
+library(scholar)
+library(dlstats)
+library(renv)
+
 print_cv <- function(table, ...){
   Args <- as.list(match.call()[-c(1, 2)])
   cat(apply(table, 1, function(x){
@@ -22,16 +31,36 @@ calculate_g <- function(x){
   x <- x[order(x$cites, decreasing = TRUE), ]
   which(diff(cumsum(x$cites) > ((1:nrow(x))^2)) == -1)
 }
+dt_wrap <- function(dat, childrow, options = NULL){
+  colnum <- which(names(dat) == childrow)
+  datatable(
+    cbind(' ' = '<img src="https://datatables.net/examples/resources/details_open.png"/>', dat), escape = -1,
+    options = c(list(
+      columnDefs = list(
+        list(visible = FALSE, targets = colnum),
+        list(orderable = FALSE, className = 'details-control', targets = 0)
+      )
+    ), options),
+    callback = JS(paste0("table.column(0).nodes().to$().css({cursor: 'pointer'});
+  var format = function(d) {
+    return '<div style=\"background-color:#eee; padding: .5em;\"> ' +
+            d[", colnum, "] + '</div>';
+  };
+  table.on('click', 'td.details-control', function() {
+    var td = $(this), row = table.row(td.closest('tr'));
+    if (row.child.isShown()) {
+      row.child.hide();
+      td.html('<img src=\"https://datatables.net/examples/resources/details_open.png\"/>');
+    } else {
+      row.child(format(row.data())).show();
+      td.html('<img src=\"https://datatables.net/examples/resources/details_close.png\"/>');
+    }
+  });")
+    ), rownames = FALSE)
+}
 
-library(knitr)
-library(kableExtra)
-library(dplyr)
-library(DT)
-library(scholar)
-library(dlstats)
-library(renv)
+
 id <- 'ub59lUMAAAAJ'
-
 ## Get his profile
 scholar_profile <- get_profile(id)
 scholar_pubs <- get_publications(id)
@@ -48,29 +77,18 @@ exp <- read.csv("Experience.csv", stringsAsFactors = FALSE)
 exp <- exp[order(gsub("^\\w{3} ", "", exp$Begin), decreasing = TRUE), ]
 
 row.names(exp) <- NULL
-exp %>%  mutate(Employer=text_spec(Employer, "html", tooltip=Description)) %>% 
-  mutate(Department=text_spec(Department, "html", tooltip=Description)) %>% 
-  mutate(Position=text_spec(Position, "html", tooltip=Description)) %>% 
-  mutate(Begin=text_spec(Begin, "html", tooltip=Description)) %>% 
-  mutate(End=text_spec(End, "html", tooltip=Description)) %>% 
-    select(Employer,Department, Position, Begin, End) %>% DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
+exp %>% select(Employer, Department, Position, Begin, End, Description) %>% dt_wrap("Description", options = list(dom = 't'))
 ```
 
 ## Education
 
 ```{r results = "asis", echo = FALSE}
 edu <- read.csv("education.csv", stringsAsFactors = FALSE)
-#edu <- edu[order(edu$Order, decreasing = TRUE), ]
-#edu$Begin <- gsub(" –.+$", "", edu$dates)
-#edu$End <- gsub("^.+ – ", "", edu$dates)
-#edu <- edu[order(gsub("^\\w{3} ", "", edu$Begin), decreasing = TRUE), ]
 
 row.names(edu) <- NULL
-edu %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Description)) %>% 
-  mutate(Field=text_spec(Field, "html", tooltip=Description)) %>% 
-  mutate(Degree=text_spec(Degree, "html", tooltip=Description)) %>% 
-  mutate(Date=text_spec(Date, "html", tooltip=Description)) %>% 
-    select(Institute,Field, Degree, Date) %>% DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
+edu %>%
+  select(Institute,Field, Degree, Date, Description) %>%
+  dt_wrap("Description", options = list(dom = 't'))
 ```
 
 ## Publications
@@ -99,7 +117,9 @@ num_authors <- lengths(regmatches(pub$author, gregexpr(";", pub$author)))
 pub$author[num_authors > 4] <- gsub(";.+$", "; et al\\.", pub$author[num_authors > 4])
 pub$author <- gsub("van Lissa", "Van Lissa", pub$author)
 pub$author <- gsub(";", ",", pub$author)
-pub$title[grepl(":", pub$title)] <- gsub(":.+$", "", pub$title[grepl(":", pub$title)])
+#pub$title[grepl(":", pub$title)] <- gsub("(?<!orner):.+$", "", pub$title[grepl(":", pub$title)], perl = TRUE)
+pub$title[nchar(pub$title) > 150] <- paste0(substr(pub$title[nchar(pub$title) > 150], 1, 149), "…")
+  #gsub("^.+orner: ", "", pub$title)
 
 pub$year[is.na(pub$year)] <- "in press"
 
@@ -111,10 +131,10 @@ pub$journal[grepl("(mplusautomation|bain|gorica)", tolower(pub$title))] <- "<tt>
 #pub$Title <- paste0('<a href = "', pub$DOI, '">', pub$Title, '</a>')
 
 pub <- pub[order(pub$cites, decreasing = TRUE), c("author", "year", "title", "journal", "cites")]
-rownames(pub) <- NULL
 names(pub) <- c("Authors", "Year", "Title", "Publication", "Cited")
-
-pub %>% DT::datatable(escape=F)
+pub <- pub[!pub$Publication %in% c("", "<i>Onderwijskunde UU</i>"), ]
+rownames(pub) <- NULL
+pub %>% DT::datatable(escape=F, options = list(pageLength = nrow(pub)))
 ```
 
 ## Software
@@ -148,24 +168,18 @@ manage %>%  DT::datatable(escape = F, options = list(dom = 't'), rownames = FALS
 
 ```{r results = "asis", echo = FALSE}
 int <- data.frame(read.csv("international.csv", stringsAsFactors = FALSE))
-int %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Details)) %>% 
-  mutate(Country=text_spec(Country, "html", tooltip=Details)) %>% 
-  mutate(Date=text_spec(Date, "html", tooltip=Details)) %>% 
-  select(-Details) %>%
-  DT::datatable(escape = F,options = list(dom = 't'), rownames = FALSE)
+int %>% 
+  dt_wrap("Details", options = list(dom = 't'))
 ```
 
 ## Invited lectures
-
+<a name="original"></a>
 ```{r results = "asis", echo = FALSE}
 invited <- data.frame(read.csv("invited.csv", stringsAsFactors = FALSE))
 rownames(invited) <- NULL
-invited %>%  mutate(Institute=text_spec(Institute, "html", tooltip=Topic)) %>% 
-  mutate(Year=text_spec(Year, "html", tooltip=Topic)) %>% 
-  mutate(City=text_spec(City, "html", tooltip=Topic)) %>% 
-  mutate(Country=text_spec(Country, "html", tooltip=Topic)) %>% 
-  select(Institute, City, Country, Year) %>%
-  DT::datatable(escape = F,options = list(dom = 't'), rownames = FALSE)
+invited %>% 
+  select(Institute, City, Country, Year, Topic) %>%
+  dt_wrap("Topic", options = list(dom = 't'))
 ```
 
 ## Funding
@@ -183,9 +197,9 @@ grant %>% DT::datatable(escape = FALSE,options = list(dom = 't'), rownames = FAL
 ```{r results = "asis", echo = FALSE}
 collab <- data.frame(read.csv("Collaborations.csv", stringsAsFactors = FALSE))
 names(collab)[3] <- "Key collaborator"
-collab %>%  mutate(Organization=text_spec(Organization, "html", tooltip=Purpose)) %>% 
-  mutate("Key collaborator"=text_spec(collab[["Key collaborator"]], "html", tooltip=Purpose)) %>%
-  select(Organization, "Key collaborator") %>% DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
+collab %>%  
+  select(Organization, "Key collaborator", Purpose) %>%
+  dt_wrap("Purpose", options = list(dom = 't'))
 ```
 
 ## Reviewer & Editorial experience
