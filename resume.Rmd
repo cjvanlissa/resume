@@ -32,7 +32,6 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-#rmarkdown::render('github_resume.Rmd', output_format = 'all') # run this to get PDF
 lastupdated <- tools::md5sum("last_updated.txt")
 writeLines(as.character(Sys.Date()), "last_updated.txt")
 run_everything <- !lastupdated == tools::md5sum("last_updated.txt")

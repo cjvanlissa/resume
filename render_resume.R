@@ -1,0 +1,2 @@
+rmarkdown::render('resume.Rmd', output_format = 'pdf_document', output_file = "resume.pdf")
+rmarkdown::render('resume.Rmd', output_format = 'html_document', output_file = "index.html", output_dir = "docs")

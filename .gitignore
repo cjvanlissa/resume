@@ -12,3 +12,4 @@ private*.Rmd
 *.log
 *.TEX
 *.PDF
+!resume.pdf
