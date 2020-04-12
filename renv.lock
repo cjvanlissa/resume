@@ -361,10 +361,15 @@
     },
     "kableExtra": {
       "Package": "kableExtra",
-      "Version": "1.1.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "37e11c605b3c0b7207763beda52c8535"
+      "Version": "1.1.0.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "haozhu233",
+      "RemoteRepo": "kableExtra",
+      "RemoteRef": "master",
+      "RemoteSha": "9059e4bb189122fa30b456f5d2d6ca4b99f471bb",
+      "Hash": "14d4e0ee73957c5c87482cb8fdaec3c8"
     },
     "knitr": {
       "Package": "knitr",
@@ -569,10 +574,10 @@
     },
     "rmarkdown": {
       "Package": "rmarkdown",
-      "Version": "2.0",
+      "Version": "2.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "745a60d9256842b1abae2dcf7b64ebc1"
+      "Hash": "9d1c61d476c448350c482d6664e1b28b"
     },
     "rprojroot": {
       "Package": "rprojroot",
@@ -688,10 +693,10 @@
     },
     "tinytex": {
       "Package": "tinytex",
-      "Version": "0.19",
+      "Version": "0.21",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "b1c0c22cab714ec9ce9472a8073b6922"
+      "Hash": "02e11a2e5d05f1d5ab19394f19ab2999"
     },
     "tweenr": {
       "Package": "tweenr",
