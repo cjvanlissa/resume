@@ -1,5 +1,6 @@
 .Rproj.user
 .Rhistory
+.Rprofile
 .RData
 .Ruserdata
 *.xlsx
@@ -8,3 +9,6 @@ educational_cv/
 *.doc
 *.RData
 private*.Rmd
+*.log
+*.TEX
+*.PDF
