@@ -444,3 +444,26 @@ if(knitr::is_html_output()){
 ```{r, eval = knitr::is_html_output(), results="asis"}
 cat("</details><br>")
 ```
+
+## Media appearances
+
+I have discussed my work in the following media outlets:
+
+
+```{r results = "asis", echo = FALSE}
+media <- data.frame(read.csv("media.csv", stringsAsFactors = FALSE))
+
+media$Date <- as.Date(media$Date, format = "%d-%m-%Y")
+media <- media[order(media$Date, decreasing = TRUE), ]
+row.names(media) <- NULL
+if(knitr::is_html_output()){
+  media %>%
+    select(Outlet, Type, Date, Country, Topic) %>%
+    dt_wrap("Topic", options = list(dom = 't'))
+} else {
+  media %>%
+    select(Outlet, Type, Date, Country) %>%
+    kable("latex", booktabs = TRUE) %>%
+    kable_styling(latex_options = "striped", position = "left")
+}
+```
