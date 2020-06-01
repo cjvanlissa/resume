@@ -195,8 +195,10 @@ if(knitr::is_html_output()){
 ## Software
 ```{r results = "asis", echo = FALSE, eval=run_everything}
 pack <- data.frame(read.csv("R-packages.csv", stringsAsFactors = FALSE))
-downloads <- dlstats::cran_stats(pack$title[pack$repo == "CRAN"])
-pack$downloads <- tapply(downloads$downloads, downloads$package, sum)
+if(!exists(".dlstats")) .dlstats <- new.env()
+downloads <- cran_stats(pack$title[pack$repo == "CRAN"])
+downloads <- tapply(downloads$downloads, downloads$package, sum)
+pack$downloads[match(names(downloads), pack$title)] <- downloads
 pack <- pack[order(pack$downloads, decreasing = TRUE, na.last = TRUE), ]
 write.csv(pack, "R-packages.csv", row.names = FALSE)
 ```
