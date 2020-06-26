@@ -1,9 +1,9 @@
-url,repo,title,downloads,description,authors,date,role
-https://cran.r-project.org/package=MplusAutomation,CRAN,MplusAutomation,93608,Automate latent variable model estimation and interpretation using 'Mplus'.,"Hallquist, M., Wiley, J., Van Lissa, C. J.",2019,Contributor
-https://cran.r-project.org/package=tidyLPA,CRAN,tidyLPA,17869,Easily Carry Out Latent Profile Analysis.,"Rosenberg, J. M., Van Lissa, C. J., Schmidt, J. A., Beymer, P. N., Anderson, D.",2018,Main developer
-https://cran.r-project.org/package=metaforest,CRAN,metaforest,10958,Conduct random forests-based meta-analysis.,"Van Lissa, C. J.",2017,Creator
-https://cran.r-project.org/package=bain,CRAN,bain,9707,Test Bayesian informative hypotheses for frequentist analyses.,"Gu, X., Hoijtink, H., Mulder, J., Van Lissa, C. J.",2018,Main developer
-https://cran.r-project.org/package=BFpack,CRAN,BFpack,4037,Implementation of various default Bayes factors for testing statistical hypotheses.,"Mulder, J., Van Lissa, C. J., et al.",2019,Main developer
-https://cran.r-project.org/package=gorica,CRAN,gorica,2473,Test informative hypotheses using the generalized order restricted information criterion.,"Van Lissa, C. J., Altinisik, Y., Kuiper, R. M.",2019,Main developer
-https://www.github.com/cjvanlissa/worcs,CRAN,worcs,220,Workflow for Open Reproducible Code in Science,"Van Lissa, C. J., Brandmaier, A. M., & Peikert, A.",2020,Main developer
-https://www.github.com/cjvanlissa/tidySEM,GitHub,tidySEM,NA,"Tidy workflow for running, tabulating, and graphing structural equation models","Van Lissa, C. J.",2020,Main developer
+"url","repo","title","downloads","description","authors","date","role"
+"https://cran.r-project.org/package=MplusAutomation","CRAN","MplusAutomation",95882,"Automate latent variable model estimation and interpretation using 'Mplus'.","Hallquist, M., Wiley, J., Van Lissa, C. J.",2019,"Contributor"
+"https://cran.r-project.org/package=tidyLPA","CRAN","tidyLPA",18879,"Easily Carry Out Latent Profile Analysis.","Rosenberg, J. M., Van Lissa, C. J., Schmidt, J. A., Beymer, P. N., Anderson, D.",2018,"Lead developer"
+"https://cran.r-project.org/package=metaforest","CRAN","metaforest",11514,"Conduct random forests-based meta-analysis.","Van Lissa, C. J.",2017,"Lead developer"
+"https://cran.r-project.org/package=bain","CRAN","bain",10600,"Test Bayesian informative hypotheses for frequentist analyses.","Gu, X., Hoijtink, H., Mulder, J., Van Lissa, C. J.",2018,"Lead developer"
+"https://cran.r-project.org/package=BFpack","CRAN","BFpack",4924,"Implementation of various default Bayes factors for testing statistical hypotheses.","Mulder, J., Van Lissa, C. J., et al.",2019,"Lead developer"
+"https://cran.r-project.org/package=gorica","CRAN","gorica",2905,"Test informative hypotheses using the generalized order restricted information criterion.","Van Lissa, C. J., Altinisik, Y., Kuiper, R. M.",2019,"Lead developer"
+"https://cran.r-project.org/package=worcs","CRAN","worcs",653,"Workflow for Open Reproducible Code in Science","Van Lissa, C. J., Brandmaier, A. M., & Peikert, A.",2020,"Lead developer"
+"https://cran.r-project.org/package=tidySEM","CRAN","tidySEM",NA,"Tidy workflow for running, tabulating, and graphing structural equation models","Van Lissa, C. J.",2020,"Lead developer"

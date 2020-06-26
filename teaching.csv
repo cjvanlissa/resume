@@ -1,44 +1,45 @@
-Onderwijsonderdeel,Years,Bijeenkomsten,Studenten,Hoorcolleges,Werkgroepen,Coordinatie,Programma,Reader/syllabus,Powerpoint,Digitale middelen,Ontwikkeling/herziening,Eigen aandeel,
-Practicum Data Analyse ,Nov-19,8,+/- 80,X,,,,,X,X,,In samenwerking met coordinator,
-Utalent: Help! Ik heb data (6VWO),Oct-19,1,20,X,,X,X,,X,,X,Zelf ontwikkelde cursus ism Utalent,
-Workshop: version control with Github (research master's),Oct-19,1,10?,,X,,,,,,X,Zelf ontwikkelde workshop,
-Multivariate statistics (DASCA research master's),Sep-19,9,14 (WC) +/- 50 (HC),X,X,X,,X,X,,,"Zelfstandig, in overleg met coordinatoren paralelcursussen",
-Theory construction & stat. modeling ,Sep-19,7,45,X,,X,X,X,X,X,X,"Werkcollege- en toetsgedeelte vervangen met opdrachten in R, gebundeld in een Gitbook: https://cjvanlissa.github.io/TCSM",
-Methoden en statistiek van sociaal wetenschappelijk onderzoek (pre-master),Sep-19,,312,,,X,X,X,,,,Zelfstandig,
-ADS: Basis van Onderzoek en Statistiek ,Sep-19,4,6,,X,,,,,,,Uitvoerend,
-Advanced Course on Using Mplus  ,Jul-19,1,+/- 30,X,X,,,X,X,,,Zelfstandig; software en bijpassend werkgroepmateriaal ontwikkeld,
-"Summer school on meta-analysis, Aix*Marseille University (FA)",Jun-19,1,30,X,X,,X,X,X,X,,Zelf ontwikkelde cursus,
-Utalent: Hoera! Ik ga onderzoek doen (6VWO),Apr-19,1,15,X,,X,X,,X,,X,Zelf ontwikkelde cursus ism Utalent,
-University College Utrecht: MET2A ,Apr-19,10,14,X,X,,,,X,,,In samenwerking met coordinator,
-Applied Bayesian Statistics ,Apr-19,5,+/- 30,,X,,,,,X,,In samenwerking met coordinator,
-Marnixacademie: MTS1&2 ,Feb-19,14,14,X,X,,,,X,,,In samenwerking met coordinator,
-University College Utrecht: MET23 ,Jan-19,20,14,X,X,,,,X,X,,In samenwerking met coordinator,
-MTS3 ,Nov-18,3,14,,X,,,,,,,Uitvoerend,
-Practicum Data Analyse ,Nov-18,8,+/- 80,X,,,,,X,X,,In samenwerking met coordinator,
-"Pre-conference workshop, EARA Ghent (BE)",Sep-18,1,?,X,,,X,X,X,X,,Zelf ontwikkelde cursus,
-Theory construction & stat. modeling ,Sep-18,7,45,X,,,,,X,X,,In samenwerking met coordinator,
-Advanced Course on Using Mplus  ,Jul-18,1,+/- 30,X,X,,,X,X,,,Zelfstandig; software en bijpassend werkgroepmateriaal ontwikkeld,
-Applied Bayesian Statistics ,Apr-18,5,+/- 30,,X,,,,,X,,In samenwerking met coordinator,
-"Methoden, Technieken en Statistiek 2 ",Feb-18,,93,,,X,X,X,,,,Zelfstandig,
-"Methoden, technieken en statistiek 4 (MTS4)",Feb-18,1,50,X,,,,,X,,,In samenwerking met coordinator,
-University College Utrecht: MET23 ,Jan-18,20,14,X,X,,,,X,X,,In samenwerking met coordinator,
-"Father involvement, Leiden University ",Dec-17,1,+/- 30,X,,,,,X,,,Zelfstandig,
-MTS3 ,Nov-17,3,14,,X,,,,,,,Uitvoerend,
-Practicum Data Analyse ,Nov-17,8,+/- 80,X,,,,,X,X,,In samenwerking met coordinator,
-SPSS  (pre-master avondonderwijs; +/- 20 ss),Jan-17,8,+/- 20,,X,,,,,,,Zelfstandig,
-Kwantitatieve Methoden (pre-master avondonderwijs),Jan-17,8,+/- 20,X,,,,,X,X,,Zelfstandig,
-Quantitative Methods ,Jan-17,8,+/- 300,X,,,,,X,X,,Zelfstandig,
-University College Utrecht ,Feb-15,1,14,X,,,,,X,,,Zelfstandig,
-Experimental seminar in development and socialisation research (DASCA06),Jan-15,1,+/- 14,X,X,,,,X,,,Zelfstandig,
-Young People’s identity formation ,Feb-14,5,+/- 20,X,X,X,X,,X,,,Samenwerking,
-Introduction to psychology,Nov-13,5,207,X,,,,,X,,,Zelfstandig,
-Young People’s identity formation ,Apr-13,5,+/- 20,X,X,X,X,,X,,,Samenwerking,
-Developmental psychology,Nov-10,6,+/- 14,,X,,,,,,,Uitvoerend,
-Meten & Diagnostiek,Sep-10,9,+/- 14,,X,,,,,,,Uitvoerend,
-Academic skills,2011,?,+/- 14,,X,,,,,,,Uitvoerend,
-Statistics II,2011,8,+/- 14,,X,,,,,,,Uitvoerend,
-Academic skills,2010,?,+/- 14,,X,,,,,,,Uitvoerend,
-Statistics II,2010,8,+/- 14,,X,,,,,,,Uitvoerend,
-Developmental psychology,2008,6,+/- 14,,X,,,,,,,Uitvoerend,
-Personality psychology,2008,?,+/- 14,,X,,,,,,,Uitvoerend,
-Biostatistics,2006,+/- 8,+/- 30,,X,,,,,,,Uitvoerend,
+Onderwijsonderdeel,Years,Bijeenkomsten,Studenten,Hoorcolleges,Werkgroepen,Coordinatie,Programma,Reader/syllabus,Powerpoint,Digitale middelen,Ontwikkeling/herziening,Eigen aandeel
+Workflow for Open Reproducible Code in Science,20-Jul,1,14,X,X,X,X,X,X,X,X,Reproducibility-cursus ontwikkeld samen met Barbara Vreede van de Universiteitsbibliotheek.
+Practicum Data Analyse ,19-Nov,8,+/- 80,X,,,,,X,X,,In samenwerking met coordinator
+Utalent: Help! Ik heb data (6VWO),19-Oct,1,20,X,,X,X,,X,,X,Zelf ontwikkelde cursus ism Utalent
+Workshop: version control with Github (research master's),19-Oct,1,10?,,X,,,,,,X,Zelf ontwikkelde workshop
+Multivariate statistics (DASCA research master's),19-Sep,9,14 (WC) +/- 50 (HC),X,X,X,,X,X,,,"Zelfstandig, in overleg met coordinatoren paralelcursussen"
+Theory construction & stat. modeling ,19-Sep,7,45,X,,X,X,X,X,X,X,"Werkcollege- en toetsgedeelte vervangen met opdrachten in R, gebundeld in een Gitbook: https://cjvanlissa.github.io/TCSM"
+Methoden en statistiek van sociaal wetenschappelijk onderzoek (pre-master),19-Sep,,312,,,X,X,X,,,,Zelfstandig
+ADS: Basis van Onderzoek en Statistiek ,19-Sep,4,6,,X,,,,,,,Uitvoerend
+Advanced Course on Using Mplus  ,19-Jul,1,+/- 30,X,X,,,X,X,,,Zelfstandig; software en bijpassend werkgroepmateriaal ontwikkeld
+"Summer school on meta-analysis, Aix*Marseille University (FA)",19-Jun,1,30,X,X,,X,X,X,X,,Zelf ontwikkelde cursus
+Utalent: Hoera! Ik ga onderzoek doen (6VWO),19-Apr,1,15,X,,X,X,,X,,X,Zelf ontwikkelde cursus ism Utalent
+University College Utrecht: MET2A ,19-Apr,10,14,X,X,,,,X,,,In samenwerking met coordinator
+Applied Bayesian Statistics ,19-Apr,5,+/- 30,,X,,,,,X,,In samenwerking met coordinator
+Marnixacademie: MTS1&2 ,19-Feb,14,14,X,X,,,,X,,,In samenwerking met coordinator
+University College Utrecht: MET23 ,19-Jan,20,14,X,X,,,,X,X,,In samenwerking met coordinator
+MTS3 ,18-Nov,3,14,,X,,,,,,,Uitvoerend
+Practicum Data Analyse ,18-Nov,8,+/- 80,X,,,,,X,X,,In samenwerking met coordinator
+"Pre-conference workshop, EARA Ghent (BE)",18-Sep,1,?,X,,,X,X,X,X,,Zelf ontwikkelde cursus
+Theory construction & stat. modeling ,18-Sep,7,45,X,,,,,X,X,,In samenwerking met coordinator
+Advanced Course on Using Mplus  ,18-Jul,1,+/- 30,X,X,,,X,X,,,Zelfstandig; software en bijpassend werkgroepmateriaal ontwikkeld
+Applied Bayesian Statistics ,18-Apr,5,+/- 30,,X,,,,,X,,In samenwerking met coordinator
+"Methoden, Technieken en Statistiek 2 ",18-Feb,,93,,,X,X,X,,,,Zelfstandig
+"Methoden, technieken en statistiek 4 (MTS4)",18-Feb,1,50,X,,,,,X,,,In samenwerking met coordinator
+University College Utrecht: MET23 ,18-Jan,20,14,X,X,,,,X,X,,In samenwerking met coordinator
+"Father involvement, Leiden University ",17-Dec,1,+/- 30,X,,,,,X,,,Zelfstandig
+MTS3 ,17-Nov,3,14,,X,,,,,,,Uitvoerend
+Practicum Data Analyse ,17-Nov,8,+/- 80,X,,,,,X,X,,In samenwerking met coordinator
+SPSS  (pre-master avondonderwijs; +/- 20 ss),17-Jan,8,+/- 20,,X,,,,,,,Zelfstandig
+Kwantitatieve Methoden (pre-master avondonderwijs),17-Jan,8,+/- 20,X,,,,,X,X,,Zelfstandig
+Quantitative Methods ,17-Jan,8,+/- 300,X,,,,,X,X,,Zelfstandig
+University College Utrecht ,15-Feb,1,14,X,,,,,X,,,Zelfstandig
+Experimental seminar in development and socialisation research (DASCA06),15-Jan,1,+/- 14,X,X,,,,X,,,Zelfstandig
+Young People’s identity formation ,14-Feb,5,+/- 20,X,X,X,X,,X,,,Samenwerking
+Introduction to psychology,13-Nov,5,207,X,,,,,X,,,Zelfstandig
+Young People’s identity formation ,13-Apr,5,+/- 20,X,X,X,X,,X,,,Samenwerking
+Developmental psychology,10-Nov,6,+/- 14,,X,,,,,,,Uitvoerend
+Meten & Diagnostiek,10-Sep,9,+/- 14,,X,,,,,,,Uitvoerend
+Academic skills,2011,?,+/- 14,,X,,,,,,,Uitvoerend
+Statistics II,2011,8,+/- 14,,X,,,,,,,Uitvoerend
+Academic skills,2010,?,+/- 14,,X,,,,,,,Uitvoerend
+Statistics II,2010,8,+/- 14,,X,,,,,,,Uitvoerend
+Developmental psychology,2008,6,+/- 14,,X,,,,,,,Uitvoerend
+Personality psychology,2008,?,+/- 14,,X,,,,,,,Uitvoerend
+Biostatistics,2006,+/- 8,+/- 30,,X,,,,,,,Uitvoerend

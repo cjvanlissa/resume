@@ -1,16 +1,18 @@
-Institute,Year,City,Country,Topic
-Joannes Juda Groen symposium (upcoming),2020,Amsterdam,NL,Will the kids be alright?
-S4: Small Sample Size Solutions (upcoming),2020,Utrecht,NL,Pre-conference workshop on meta-analysis
-Together we (Re)search,2020,Utrecht,NL,How can Science Serve Society?
-ERASMUS University,2020,Rotterdam,NL,Will the kids be alright?
-Aix*Marseille University,2019,Aix-en-Provence,FR,Workshop on meta-analysis
-Tilburg University,2019,Tilburg,NL,Guest lecture on mixture models
-EARA,2018,Ghent,BE,Pre-conference workshop on meta-analysis
-Systematic Reviewing 3.0,2018,Utrecht,NL,MetaForest
-University of Texas at Austin,2017,Austin,US,MetaForest
-UvA,2017,Amsterdam,NL,MetaForest
-"Human Technology Interaction, TU Eindhoven",2017,Eindhoven,NL,Variance partialing
-Centre for Child and Family Studies,2017,Leiden,NL,Father involvement
-UNO SPIT-Lab,2014,New Orleans,US,Empathy and adolescent-parent conflict resolution
-William James Symposium,2012,Utrecht,NL,Intergenerational transmission of empathy
-Brain & Development Lab (Eveline Crone),2012,Leiden,NL,Intergenerational transmission of empathy
+Institute,Year,City,Country,Topic,Date
+Joannes Juda Groen symposium (upcoming),2020,Amsterdam,NL,Will the kids be alright?,
+Eindhoven University of Technology,2020,Eindhoven,NL,Workflow for Open Reproducible Code in Science,26-06-2020
+Oxford University,2020,Oxford,UK,Moral Molecules Conference,21-05-2020
+S4: Small Sample Size Solutions (postponed),2020,Utrecht,NL,Pre-conference workshop on meta-analysis,
+Together we (Re)search,2020,Utrecht,NL,How can Science Serve Society?,
+ERASMUS University,2020,Rotterdam,NL,Will the kids be alright?,
+Aix*Marseille University,2019,Aix-en-Provence,FR,Workshop on meta-analysis,
+Tilburg University,2019,Tilburg,NL,Guest lecture on mixture models,
+EARA,2018,Ghent,BE,Pre-conference workshop on meta-analysis,
+Systematic Reviewing 3.0,2018,Utrecht,NL,MetaForest,
+University of Texas at Austin,2017,Austin,US,MetaForest,
+UvA,2017,Amsterdam,NL,MetaForest,
+"Human Technology Interaction, TU Eindhoven",2017,Eindhoven,NL,Variance partialing,
+Centre for Child and Family Studies,2017,Leiden,NL,Father involvement,
+UNO SPIT-Lab,2014,New Orleans,US,Empathy and adolescent-parent conflict resolution,
+William James Symposium,2012,Utrecht,NL,Intergenerational transmission of empathy,
+Brain & Development Lab (Eveline Crone),2012,Leiden,NL,Intergenerational transmission of empathy,
