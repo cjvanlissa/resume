@@ -2,7 +2,7 @@
 title: "Caspar J. van Lissa"
 subtitle: |
   | Veni-funded developmental data scientist, Open Science faculty ambassador, statistical consulting editor. Using machine learning to predict teenagers' emotional problems.
-  | `r if(knitr::is_latex_output()){'This resume is best viewed online at https://cjvanlissa.github.io/resume'}`
+  | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
 date: "`r Sys.Date()`"
 output:
   html_document:
@@ -160,6 +160,8 @@ pub$author <- gsub(";", ",", pub$author)
 pub$title[nchar(pub$title) > 150] <- paste0(substr(pub$title[nchar(pub$title) > 150], 1, 149), "…")
 
 pub$year[is.na(pub$year)] <- "in press"
+# Filter out specific pubs
+pub <- pub[!pub$title == "gorica: Evaluate informative hypotheses using the GORICA", ]
 
 pub <- pub[order(pub$cites, decreasing = TRUE), c("author", "year", "title", "journal", "cites")]
 names(pub) <- c("Authors", "Year", "Title", "Publication", "Cited")
