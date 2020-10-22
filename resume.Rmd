@@ -1,9 +1,9 @@
 ---
-title: "Caspar J. van Lissa"
+title: "Caspar J. van Lissa, PhD"
 subtitle: |
   | Veni-funded developmental data scientist, Open Science faculty ambassador, statistical consulting editor. Using machine learning to predict teenagers' emotional problems.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
-date: "`r Sys.Date()`"
+date: "Last updated: `r Sys.Date()`"
 output:
   html_document:
     toc: true
@@ -32,9 +32,9 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-lastupdated <- tools::md5sum("last_updated.txt")
+lastupdated <- readLines("last_updated.txt")
 writeLines(as.character(Sys.Date()), "last_updated.txt")
-run_everything <- !lastupdated == tools::md5sum("last_updated.txt")
+run_everything <- !lastupdated == readLines("last_updated.txt")
 
 knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE)
 library(knitr)
