@@ -96,7 +96,7 @@ exp <- exp[order(gsub("^\\w{3} ", "", exp$Begin), decreasing = TRUE), ]
 
 row.names(exp) <- NULL
 if(knitr::is_html_output()){
-  exp %>% select(Employer, Department, Position, Begin, End, Description) %>% dt_wrap("Description", options = list(dom = 't'))
+  exp %>% select(Employer, Department, Position, Begin, End, Description) %>% dt_wrap("Description", options = list(dom = 't', "pageLength" = 40))
 } else {
   exp %>% select(Employer, Department, Position, Begin, End) %>% kable("latex", booktabs = TRUE) %>%
   column_spec(1:3, width = "12em") %>%
@@ -115,7 +115,7 @@ row.names(edu) <- NULL
 if(knitr::is_html_output()){
   edu %>%
     select(Institute,Field, Degree, Date, Description) %>%
-    dt_wrap("Description", options = list(dom = 't'))
+    dt_wrap("Description", options = list(dom = 't', "pageLength" = 40))
 } else {
   edu %>%
   select(Institute,Field, Degree, Date) %>% 
@@ -176,7 +176,7 @@ pub <- read.csv("My publications.csv", stringsAsFactors = FALSE)
 
 if(knitr::is_html_output()){
   pub$Publication[!pub$Publication == ""] <- paste0('<i>', pub$Publication[!pub$Publication == ""], '</i>')
-  pub$Publication[grepl("(mplusautomation|bain|gorica)", tolower(pub$Title))] <- "<tt>CRAN</tt>"
+  pub$Publication[grepl("(mplusautomation|bain|'metaforest'|gorica)", tolower(pub$Title))] <- "<tt>CRAN</tt>"
   rownames(pub) <- NULL
   pub %>% DT::datatable(escape=F, options = list(pageLength = nrow(pub)))
 } else {
@@ -258,7 +258,7 @@ int <- data.frame(read.csv("international.csv", stringsAsFactors = FALSE))
 
 if(knitr::is_html_output()){
   int %>% 
-    dt_wrap("Details", options = list(dom = 't'))
+    dt_wrap("Details", options = list(dom = 't', "pageLength" = 40))
 } else {
   int %>% 
     kable("latex", booktabs = TRUE) %>%
@@ -277,7 +277,7 @@ rownames(invited) <- NULL
 if(knitr::is_html_output()){
   invited %>% 
     select(Institute, City, Country, Year, Topic) %>%
-    dt_wrap("Topic", options = list(dom = 't'))
+    dt_wrap("Topic", options = list(dom = 't', "pageLength" = 40))
 } else {
   invited %>%
     select(Institute, City, Country, Year) %>%
@@ -312,7 +312,7 @@ names(collab)[3] <- "Key collaborator"
 if(knitr::is_html_output()){
   collab %>%  
     select(Organization, "Key collaborator", Purpose) %>%
-    dt_wrap("Purpose", options = list(dom = 't'))
+    dt_wrap("Purpose", options = list(dom = 't', "pageLength" = 40))
 } else {
   collab %>%  
     select(Organization, "Key collaborator") %>%
@@ -463,7 +463,7 @@ row.names(media) <- NULL
 if(knitr::is_html_output()){
   media %>%
     select(Outlet, Type, Date, Country, Topic) %>%
-    dt_wrap("Topic", options = list(dom = 't'))
+    dt_wrap("Topic", options = list(dom = 't', "pageLength" = 40))
 } else {
   media %>%
     select(Outlet, Type, Date, Country) %>%
