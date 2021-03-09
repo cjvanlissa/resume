@@ -1,21 +1,21 @@
 "Authors","Year","Title","Publication","Cited"
-"Curry, O. S., et al.","2018","Happy to help? A systematic review and meta-analysis of the effects of performing acts of kindness on the well-being of the actor","Journal of Experimental Social Psychology",110
-"Curry, O. S., Chesters, M. J., Van Lissa, C. J.","2019","Mapping morality with a compass: Testing the theory of ‘morality-as-cooperation’with a new questionnaire","Journal of Research in Personality",67
-"Van Lissa, C. J., et al.","2014","The longitudinal interplay of affective and cognitive empathy within and between adolescents and mothers.","Developmental Psychology",61
+"Curry, O. S., et al.","2018","Happy to help? A systematic review and meta-analysis of the effects of performing acts of kindness on the well-being of the actor","Journal of Experimental Social Psychology",112
+"Curry, O. S., Chesters, M. J., Van Lissa, C. J.","2019","Mapping morality with a compass: Testing the theory of ‘morality-as-cooperation’with a new questionnaire","Journal of Research in Personality",68
+"Van Lissa, C. J., et al.","2014","The longitudinal interplay of affective and cognitive empathy within and between adolescents and mothers.","Developmental Psychology",62
 "Rosenberg, J. M., Beymer, P. N., Anderson, D. J., Van Lissa, C. J., Schmidt, J. A.","2018","tidyLPA: An R Package to Easily Carry Out Latent Profile Analysis (LPA) Using Open-Source or Commercial Software.","J. Open Source Software",59
-"Van Lissa, C. J., Caracciolo, M., van Duuren, T., & van Leuveren, B.","2018","Difficult Empathy-The Effect of Narrative Perspective on Readers’ Engagement with a First-Person Narrator","Diegesis",54
-"Terrer, C., et al.","2019","Nitrogen and phosphorus constrain the CO 2 fertilization of global plant biomass","Nature Climate Change",52
+"Van Lissa, C. J., Caracciolo, M., van Duuren, T., & van Leuveren, B.","2018","Difficult Empathy-The Effect of Narrative Perspective on Readers’ Engagement with a First-Person Narrator","Diegesis",55
+"Terrer, C., et al.","2019","Nitrogen and phosphorus constrain the CO 2 fertilization of global plant biomass","Nature Climate Change",54
 "Hawk, S. T., van den Eijnden, R. J. J. M., Van Lissa, C. J., ter Bogt, T. F. M.","2019","Narcissistic adolescents' attention-seeking following social rejection: Links with social media disclosure, problematic social media use, and smartph…","Computers in Human Behavior",50
+"Du, E., et al.","2020","Global patterns of terrestrial nitrogen and phosphorus limitation","Nature Geoscience",46
 "Van Lissa, C. J., Hawk, S. T., Branje, S., Koot, H. M., Meeus, W. H. J.","2016","Common and unique associations of adolescents' affective and cognitive empathy development with conflict behavior towards parents","Journal of Adolescence",46
-"Du, E., et al.","2020","Global patterns of terrestrial nitrogen and phosphorus limitation","Nature Geoscience",42
-"Hoijtink, H., Mulder, J., Van Lissa, C., & Gu, X.","2019","A tutorial on testing hypotheses using the Bayes factor.","Psychological Methods",41
+"Hoijtink, H., Mulder, J., Van Lissa, C., & Gu, X.","2019","A tutorial on testing hypotheses using the Bayes factor.","Psychological Methods",42
 "Van Lissa, C. J., et al.","2015","Divergence between adolescent and parental perceptions of conflict in relationship to adolescent empathy development","Journal of Youth and Adolescence",41
-"Van Lissa, C. J., Keizer, R., Van Lier, P. A. C., Meeus, W. H. J., & Branje, S.","2019","The role of fathers’ versus mothers’ parenting in emotion-regulation development from mid–late adolescence: Disentangling between-family differences …","Developmental psychology",36
+"Van Lissa, C. J., Keizer, R., Van Lier, P. A. C., Meeus, W. H. J., & Branje, S.","2019","The role of fathers’ versus mothers’ parenting in emotion-regulation development from mid–late adolescence: Disentangling between-family differences …","Developmental psychology",37
 "Van Lissa, C. J., Hawk, S. T., Meeus, W. H. J.","2017","The effects of affective and cognitive empathy on adolescents’ behavior and outcomes in conflicts with mothers","Journal of Experimental Child Psychology",35
-"Bonapersona, V., et al.","2019","The behavioral phenotype of early life adversity: a 3-level meta-analysis of rodent studies","Neuroscience & Biobehavioral Reviews",29
+"Bonapersona, V., et al.","2019","The behavioral phenotype of early life adversity: a 3-level meta-analysis of rodent studies","Neuroscience & Biobehavioral Reviews",28
 "Van Lissa, C. J., Hawk, S. T., Koot, H. M., Branje, S., Meeus, W. H. J.","2017","The cost of empathy: Parent–adolescent conflict predicts emotion dysregulation for highly empathic youth.","Developmental psychology",23
+"Roberts, H., Van Lissa, C., Hagedoorn, P., Kellar, I., & Helbich, M.","2019","The effect of short-term exposure to the natural environment on depressive mood: A systematic review and meta-analysis","Environmental research",14
 "Van Lissa, C. J.","2017","MetaForest: Exploring heterogeneity in meta-analysis using random forests","PsyArXiv",13
-"Roberts, H., Van Lissa, C., Hagedoorn, P., Kellar, I., & Helbich, M.","2019","The effect of short-term exposure to the natural environment on depressive mood: A systematic review and meta-analysis","Environmental research",12
 "Du, E., et al.","2020","Global patterns of terrestrial nitrogen and phosphorus limitation, Nat. Geosci., 13, 221–226","",9
 "Keizer, R., Van Lissa, C. J., Tiemeier, H., & Lucassen, N.","2020","The influence of fathers and mothers equally sharing childcare responsibilities on children’s cognitive development from early childhood to school ag…","European Sociological Review",8
 "Gu, X., Hoijtink, H., Mulder, J., Van Lissa, C. J.","2019","bain: Bayes factors for infor-mative hypotheses","R-Package available from https://CRAN. R-project. org/package= bain",7
@@ -27,6 +27,7 @@
 "Mulder, J., et al.","2019","BFpack: Flexible bayes factor testing of scientific theories in r","arXiv preprint arXiv:",2
 "Sivan, J., Curry, O. S., Van Lissa, C. J.","2018","Excavating the foundations: cognitive adaptations for multiple moral domains","Evolutionary Psychological Science",2
 "Van Lissa, C. J.","2017","Package ‘metaforest’","",2
+"Van Lissa, C. J., et al.","2020","Early Indicators of COVID-19 Infection Prevention Behaviors: Machine Learning Identifies Personal and Country-Level Factors","PsyArXiv",1
 "Vrolijk, P., Van Lissa, C. J., Branje, S. J. T., Meeus, W. H. J., & Keizer, R.","2020","Longitudinal Linkages Between Father and Mother Autonomy Support and Adolescent Problem Behaviors: Between-Family Differences and Within-Family Effec…","Journal of youth and adolescence",1
 "Heck, D. W., et al.","2020","A Review of Applications of the Bayes Factor in Psychological Research","PsyArXiv",1
 "Van Lissa, C. J., & Keizer, R.","2020","Mothers’ and fathers’ quantitative and qualitative parenting in relation to children’s emotional adjustment: A between-and within-family investigatio…","Developmental Psychology",1
@@ -35,4 +36,4 @@
 "Van Lissa, C. J., et al.","2016","De ontwikkelingsvolgorde van emotionele en cognitieve empathie bij adolescenten, en de rol van moeders","Kind en adolescent",1
 "Jin, S., et al.","2021","Intergenerational conflicts of interest and prosocial behavior during the COVID-19 pandemic","Personality and Individual Differences",0
 "Roberts, H., Van Lissa, C., & Helbich, M.","2021","Perceived neighbourhood characteristics and depressive symptoms: Potential mediators and the moderating role of employment status","Social Science & Medicine",0
-"Van Lissa, C. J., et al.","2020","Early Indicators of COVID-19 Infection Prevention Behaviors: Machine Learning Identifies Personal and Country-Level Factors","PsyArXiv",0
+"Nisa, C., et al.","2020","Appealing to economic (vs. health) risk may be more effective to fight COVID-19: A multilevel analysis in 24 countries","PsyArXiv Preprints",0
