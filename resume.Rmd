@@ -1,7 +1,7 @@
 ---
 title: "Caspar J. van Lissa, PhD"
 subtitle: |
-  | Veni-funded developmental data scientist, Open Science faculty ambassador, statistical consulting editor. Using machine learning to predict teenagers' emotional problems.
+  | Veni-funded developmental data scientist, Open Science faculty ambassador, statistical consulting editor. Usocia Teacher of the Year 2021. Using machine learning to predict teenagers' emotional problems.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
 date: "Last updated: `r Sys.Date()`"
 output:
@@ -32,9 +32,7 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-lastupdated <- readLines("last_updated.txt")
-writeLines(as.character(Sys.Date()), "last_updated.txt")
-run_everything <- !lastupdated == readLines("last_updated.txt")
+run_everything <- TRUE
 
 knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE)
 library(knitr)
@@ -161,9 +159,9 @@ pub$title[nchar(pub$title) > 150] <- paste0(substr(pub$title[nchar(pub$title) > 
 
 pub$year[is.na(pub$year)] <- "in press"
 # Filter out specific pubs
-pub <- pub[!pub$title == "gorica: Evaluate informative hypotheses using the GORICA", ]
+pub <- pub[!(grepl("gorica", tolower(pub$title))), ]
 
-pub <- pub[order(pub$cites, decreasing = TRUE), c("author", "year", "title", "journal", "cites")]
+pub <- pub[order(pub$year, decreasing = TRUE), c("author", "year", "title", "journal", "cites")]
 names(pub) <- c("Authors", "Year", "Title", "Publication", "Cited")
 
 write.csv(pub, "My publications.csv", row.names = FALSE)
@@ -361,7 +359,8 @@ super <- data.frame(read.csv("supervision.csv", stringsAsFactors = FALSE))
 sum_sup <- tapply(as.numeric(super$Students), factor(super$Level), sum)
 ```
 
-Since my first teaching appointment in 2006, I have taught continuously, in `r nrow(teach)` courses, from the high-school to post-graduate (e.g., summer schools, pre-conference workshops) level. I have lectured in `r sum(teach$Hoorcolleges == "Yes")` courses, taught tutorials in `r sum(teach$Werkgroepen == "Yes")`, coordinated `r sum(teach$Coordinatie == "Yes")`, and developed the material for `r sum(teach$Ontwikkeling.herziening == "Yes")` courses.
+In 2021, I received the Teacher of the Year award from Usocia for teaching "Practicum Data-Analyse", for which I developed a series of [YouTube tutorials](https://www.youtube.com/playlist?list=PLOQIOFZl7uYbfquGEtB9QheDZRKw9yeG6).
+Since my first teaching appointment in 2006, I have taught `r nrow(teach)` courses, to students from diverse backgrounds ranging from high-school to post-graduate (e.g., summer schools, pre-conference workshops). I have lectured in `r sum(teach$Hoorcolleges == "Yes")` courses, taught tutorials in `r sum(teach$Werkgroepen == "Yes")`, coordinated `r sum(teach$Coordinatie == "Yes")`, and developed the material for `r sum(teach$Ontwikkeling.herziening == "Yes")` courses.
 ```{r, eval = knitr::is_latex_output(), results="asis"}
 cat("I have supervised", paste0(paste0(sum_sup[1:(length(sum_sup)-1)], " ", names(sum_sup)[1:(length(sum_sup)-1)], collapse = ", "), ", and ", tail(sum_sup, 1), " ", tail(names(sum_sup), 1), collapse = ""), "students.")
 ```
