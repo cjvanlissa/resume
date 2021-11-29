@@ -34,7 +34,7 @@ header-includes:
 ```{r setup, include=FALSE}
 run_everything <- TRUE
 
-knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE)
+knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE, warning = FALSE)
 library(knitr)
 options(kableExtra.latex.load_packages = FALSE)
 library(kableExtra)
