@@ -198,6 +198,7 @@ pack <- data.frame(read.csv("R-packages.csv", stringsAsFactors = FALSE))
 if(!exists(".dlstats")) .dlstats <- new.env()
 downloads <- cran_stats(pack$title[pack$repo == "CRAN"])
 downloads <- tapply(downloads$downloads, downloads$package, sum)
+downloads[is.na(downloads)] <- 0
 pack$downloads[match(names(downloads), pack$title)] <- downloads
 pack <- pack[order(pack$downloads, decreasing = TRUE, na.last = TRUE), ]
 write.csv(pack, "R-packages.csv", row.names = FALSE)
