@@ -267,7 +267,7 @@ if(knitr::is_html_output()){
 }
 ```
 
-## Invited lectures
+## Invited lectures, preconference workshops, summer schools 
 <a name="original"></a>
 ```{r results = "asis", echo = FALSE}
 invited <- data.frame(read.csv("invited.csv", stringsAsFactors = FALSE))
@@ -323,8 +323,18 @@ if(knitr::is_html_output()){
 ## Reviewer & Editorial experience
 
 ```{r}
+library(rjson)
+publons <- rjson::fromJSON(file = "publons.json")$records
+publons <- data.frame(t(sapply(publons$review$per_journal, function(x){ c(x$name, x$count)})))
+names(publons) <- c("Name", "N")
+publons$Category <- "Journal"
+#publons$mergeid <- trimws(tolower(publons$Name))
 rev <- read.csv("review.csv", stringsAsFactors = FALSE, header = FALSE)
 names(rev) <- c("N", "Name", "Category")
+# rev$mergeid <- trimws(tolower(rev$Name))
+# rev[rev$mergeid %in% publons$mergeid, ]$N2 <- publons[match(rev[rev$mergeid %in% publons$mergeid, ]$mergeid, publons$mergeid), ]$N
+rev <- rbind(publons, rev)
+rev$N <- as.integer(rev$N)
 rev_tab <- tapply(rev$N, factor(rev$Category), sum)
 ```
 

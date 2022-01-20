@@ -1,0 +1,430 @@
+{
+    "author": {
+        "publishing_name": "Caspar van Lissa",
+        "rid": "AAB-1047-2021",
+        "url": "https://publons.com/researcher/AAB-1047-2021/"
+    },
+    "date_generated": "January 20th 2022",
+    "records": {
+        "publication": {
+            "list": [
+                {
+                    "citation_count": 9,
+                    "doi": "10.1177/0022022120988913",
+                    "journal": "Journal of Cross-Cultural Psychology",
+                    "publication_date": "Aug 2021",
+                    "title": "Cooperation and Trust Across Societies During the COVID-19 Pandemic"
+                },
+                {
+                    "citation_count": 5,
+                    "doi": "10.1080/10705511.2020.1745644",
+                    "journal": "Structural Equation Modeling",
+                    "publication_date": "Mar 2021",
+                    "title": "Teacher's Corner: Evaluating Informative Hypotheses Using the Bayes Factor in Structural Equation Models"
+                },
+                {
+                    "citation_count": 16,
+                    "doi": "10.1016/J.PAID.2020.110535",
+                    "journal": "Personality and Individual Differences",
+                    "publication_date": "Mar 2021",
+                    "title": "Intergenerational conflicts of interest and prosocial behavior during the COVID-19 pandemic"
+                },
+                {
+                    "citation_count": 1,
+                    "doi": "10.1016/J.SOCSCIMED.2020.113533",
+                    "journal": "Social Science & Medicine",
+                    "publication_date": "Jan 2021",
+                    "title": "Perceived neighbourhood characteristics and depressive symptoms: Potential mediators and the moderating role of employment status"
+                },
+                {
+                    "citation_count": 3,
+                    "doi": "10.1037/FAM0000649",
+                    "journal": "Journal of Family Psychology",
+                    "publication_date": "Dec 2020",
+                    "title": "Day-to-Day Spillover and Long-Term Transmission of Interparental Conflict to Adolescent-Mother Conflict: The Role of Mood"
+                },
+                {
+                    "citation_count": 4,
+                    "doi": "10.1007/S10964-020-01309-8",
+                    "journal": "Journal of Youth and Adolescence",
+                    "publication_date": "Nov 2020",
+                    "title": "Longitudinal Linkages Between Father and Mother Autonomy Support and Adolescent Problem Behaviors: Between-Family Differences and Within-Family Effects"
+                },
+                {
+                    "citation_count": 5,
+                    "doi": "10.1037/DEV0001042",
+                    "journal": "Developmental Psychology",
+                    "publication_date": "Sep 2020",
+                    "title": "Mothers' and Fathers' Quantitative and Qualitative Parenting in Relation to Children's Emotional Adjustment: A Between- and Within-Family"
+                },
+                {
+                    "citation_count": 1,
+                    "doi": "10.1038/S41558-020-0808-Y",
+                    "journal": "Nature Climate Change",
+                    "publication_date": "Jul 2020",
+                    "title": "Nitrogen and phosphorus constrain the CO2 fertilization of global plant biomass (vol 21, pg 561, 2020)"
+                },
+                {
+                    "citation_count": 121,
+                    "doi": "10.1038/S41561-019-0530-4",
+                    "journal": "Nature Geoscience",
+                    "publication_date": "Mar 2020",
+                    "title": "Global patterns of terrestrial nitrogen and phosphorus limitation"
+                },
+                {
+                    "citation_count": null,
+                    "doi": "10.4324/9780429273872",
+                    "journal": "Small Sample Size Solutions",
+                    "publication_date": "Feb 2020",
+                    "title": "Small Sample Size Solutions"
+                },
+                {
+                    "citation_count": 7,
+                    "doi": "10.1093/ESR/JCZ046",
+                    "journal": "European Sociological Review",
+                    "publication_date": "Feb 2020",
+                    "title": "The Influence of Fathers and Mothers Equally Sharing Childcare Responsibilities on Children's Cognitive Development from Early Childhood to School Age: An Overlooked Mechanism in the Intergenerational Transmission of (Dis)Advantages?"
+                },
+                {
+                    "citation_count": 20,
+                    "doi": "10.1016/J.ENVRES.2019.108606",
+                    "journal": "Environmental Research",
+                    "publication_date": "Oct 2019",
+                    "title": "The effect of short-term exposure to the natural environment on depressive mood: A systematic review and meta-analysis"
+                },
+                {
+                    "citation_count": 45,
+                    "doi": "10.1037/MET0000201",
+                    "journal": "Psychological Methods",
+                    "publication_date": "Oct 2019",
+                    "title": "A Tutorial on Testing Hypotheses Using the Bayes Factor"
+                },
+                {
+                    "citation_count": 95,
+                    "doi": "10.1038/S41558-019-0545-2",
+                    "journal": "Nature Climate Change",
+                    "publication_date": "Sep 2019",
+                    "title": "Nitrogen and phosphorus constrain the CO2 fertilization of global plant biomass"
+                },
+                {
+                    "citation_count": 29,
+                    "doi": "10.1016/J.NEUBIOREV.2019.04.021",
+                    "journal": "Neuroscience and Biobehavioral Reviews",
+                    "publication_date": "Jul 2019",
+                    "title": "The behavioral phenotype of early life adversity: A 3-level meta-analysis of rodent studies"
+                },
+                {
+                    "citation_count": 28,
+                    "doi": "10.1016/J.CHB.2018.10.032",
+                    "journal": "Computers in Human Behavior",
+                    "publication_date": "Mar 2019",
+                    "title": "Narcissistic adolescents' attention-seeking following social rejection: Links with social media disclosure, problematic social media use, and smartphone stress"
+                },
+                {
+                    "citation_count": 42,
+                    "doi": "10.1037/DEV0000612",
+                    "journal": "Developmental Psychology",
+                    "publication_date": "Feb 2019",
+                    "title": "The Role of Fathers' Versus Mothers' Parenting in Emotion-Regulation Development From Mid-Late Adolescence: Disentangling Between-Family Differences From Within-Family Effects"
+                },
+                {
+                    "citation_count": 47,
+                    "doi": "10.1016/J.JRP.2018.10.008",
+                    "journal": "Journal of Research in Personality",
+                    "publication_date": "Feb 2019",
+                    "title": "Mapping morality with a compass: Testing the theory of 'morality-as-cooperation' with a new questionnaire"
+                },
+                {
+                    "citation_count": 0,
+                    "doi": "10.1007/S40806-018-0154-8",
+                    "journal": "Evolutionary Psychological Science",
+                    "publication_date": "Dec 2018",
+                    "title": "Excavating the Foundations: Cognitive Adaptations for Multiple Moral Domains"
+                },
+                {
+                    "citation_count": null,
+                    "doi": "10.21105/JOSS.00978",
+                    "journal": "The Journal of Open Source Software",
+                    "publication_date": "Oct 2018",
+                    "title": "tidyLPA: An R Package to Easily Carry Out Latent Profile Analysis (LPA) Using Open-Source or Commercial Software"
+                },
+                {
+                    "citation_count": 89,
+                    "doi": "10.1016/J.JESP.2018.02.014",
+                    "journal": "Journal of Experimental Social Psychology",
+                    "publication_date": "May 2018",
+                    "title": "Happy to help? A systematic review and meta-analysis of the effects of performing acts of kindness on the well-being of the actor"
+                },
+                {
+                    "citation_count": 19,
+                    "doi": "10.1037/DEV0000361",
+                    "journal": "Developmental Psychology",
+                    "publication_date": "Sep 2017",
+                    "title": "The Cost of Empathy: Parent-Adolescent Conflict Predicts Emotion Dysregulation for Highly Empathic Youth"
+                },
+                {
+                    "citation_count": 16,
+                    "doi": "10.1016/J.JECP.2017.01.002",
+                    "journal": "Journal of Experimental Child Psychology",
+                    "publication_date": "Jun 2017",
+                    "title": "The effects of affective and cognitive empathy on adolescents' behavior and outcomes in conflicts with mothers"
+                },
+                {
+                    "citation_count": null,
+                    "doi": "10.1007/S12453-016-0118-3",
+                    "journal": "Kind en Adolescent",
+                    "publication_date": "Sep 2016",
+                    "title": "De ontwikkelingsvolgorde van emotionele en cognitieve empathie bij adolescenten, en de rol van moeders"
+                },
+                {
+                    "citation_count": 23,
+                    "doi": "10.1016/J.ADOLESCENCE.2015.12.005",
+                    "journal": "Journal of Adolescence",
+                    "publication_date": "Feb 2016",
+                    "title": "Common and unique associations of adolescents' affective and cognitive empathy development with conflict behavior towards parents"
+                },
+                {
+                    "citation_count": 22,
+                    "doi": "10.1007/S10964-014-0152-5",
+                    "journal": "Journal of Youth and Adolescence",
+                    "publication_date": "Jan 2015",
+                    "title": "Divergence Between Adolescent and Parental Perceptions of Conflict in Relationship to Adolescent Empathy Development"
+                },
+                {
+                    "citation_count": 35,
+                    "doi": "10.1037/A0035050",
+                    "journal": "Developmental Psychology",
+                    "publication_date": "Apr 2014",
+                    "title": "The Longitudinal Interplay of Affective and Cognitive Empathy Within and Between Adolescents and Mothers"
+                },
+                {
+                    "citation_count": null,
+                    "doi": "",
+                    "journal": null,
+                    "publication_date": null,
+                    "title": "Difficult Empathy-The Effect of Narrative Perspective on Readers\u2019 Engagement with a First-Person Narrator"
+                }
+            ],
+            "per_journal": [
+                {
+                    "name": "Developmental Psychology",
+                    "count": 4,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Youth and Adolescence",
+                    "count": 2,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Nature Climate Change",
+                    "count": 2,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Experimental Social Psychology",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Psychological Methods",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Evolutionary Psychological Science",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Adolescence",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Experimental Child Psychology",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Nature Geoscience",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "The Journal of Open Source Software",
+                    "count": 1,
+                    "is_in_wos_cc": false
+                },
+                {
+                    "name": "Computers in Human Behavior",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "European Sociological Review",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Environmental Research",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Kind en Adolescent",
+                    "count": 1,
+                    "is_in_wos_cc": false
+                },
+                {
+                    "name": "Journal of Family Psychology",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Cross-Cultural Psychology",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Neuroscience and Biobehavioral Reviews",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Structural Equation Modeling",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Research in Personality",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Personality and Individual Differences",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Social Science & Medicine",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Small Sample Size Solutions",
+                    "count": 1,
+                    "is_in_wos_cc": false
+                }
+            ],
+            "total_citations": 682,
+            "total_h_index": 15,
+            "total_publications": 28,
+            "total_publications_cc": 24
+        },
+        "review": {
+            "per_journal": [
+                {
+                    "name": "Child Development",
+                    "count": 11,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Early Adolescence",
+                    "count": 4,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Child and Family Studies",
+                    "count": 3,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Research on Adolescence",
+                    "count": 3,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Adolescence",
+                    "count": 2,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Journal of Experimental Psychology: General",
+                    "count": 2,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Emotion Review",
+                    "count": 2,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Developmental Psychology",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "PNAS Nexus",
+                    "count": 1,
+                    "is_in_wos_cc": false
+                },
+                {
+                    "name": "Social Development",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Structural Equation Modeling",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "AERA Open",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Plos One",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Social Psychology",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "European Journal of Personality",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Cognition & Emotion",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "BMJ Open",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "European Journal of Developmental Psychology",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "Advances in Methods and Practices in Psychological Science",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                },
+                {
+                    "name": "International Journal of Behavioral Development",
+                    "count": 1,
+                    "is_in_wos_cc": true
+                }
+            ]
+        }
+    }
+}
