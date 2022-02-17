@@ -1,7 +1,7 @@
 ---
 title: "Caspar J. van Lissa, PhD"
 subtitle: |
-  | Veni-funded developmental data scientist, Open Science faculty ambassador, statistical consulting editor. Usocia Teacher of the Year 2021. Using machine learning to predict teenagers' emotional problems.
+  | Veni-funded developmental data scientist, co-chair of the Open Science Community Utrecht, statistical consulting editor. Usocia Teacher of the Year 2021.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
 date: "Last updated: `r Sys.Date()`"
 output:

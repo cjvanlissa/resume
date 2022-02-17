@@ -13,3 +13,6 @@ private*.Rmd
 *.TEX
 *.PDF
 !resume.pdf
+uhd.Rmd
+uhd.html
+Inductive_deductive 5.png
