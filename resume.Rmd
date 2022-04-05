@@ -163,7 +163,7 @@ pub <- pub[!(grepl("gorica", tolower(pub$title))), ]
 
 pub <- pub[order(pub$year, decreasing = TRUE), c("author", "year", "title", "journal", "cites")]
 names(pub) <- c("Authors", "Year", "Title", "Publication", "Cited")
-
+pub[grepl("schumpe", pub$Authors, ignore.case = T), "Authors"] <- "Schumpe, P. C. C., Van Lissa, C. J. (joint 1st), et al."
 write.csv(pub, "My publications.csv", row.names = FALSE)
 ```
 
