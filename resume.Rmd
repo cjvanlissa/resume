@@ -1,7 +1,7 @@
 ---
 title: "Caspar J. van Lissa, PhD"
 subtitle: |
-  | Veni-funded associate professor of social data science, chair of the Open Science Community Tilburg, associate editor of Research Synthesis Methods. Usocia Teacher of the Year 2021.
+  | Veni-funded associate professor of social data science, member of the Tilburg Young Academy, chair of the Open Science Community Tilburg, associate editor of Research Synthesis Methods.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
 date: "Last updated: `r Sys.Date()`"
 output:
@@ -97,7 +97,7 @@ if(knitr::is_html_output()){
   exp %>% select(Employer, Department, Position, Begin, End, Description) %>% dt_wrap("Description", options = list(dom = 't', "pageLength" = 40))
 } else {
   exp %>% select(Employer, Department, Position, Begin, End) %>% kable("latex", booktabs = TRUE) %>%
-  column_spec(1:3, width = "12em") %>%
+  column_spec(column = c(1:3), width = "12em") %>%
 kable_styling(latex_options = "striped", position = "left")
 }
 
@@ -228,7 +228,7 @@ if(knitr::is_html_output()){
     kable("latex", booktabs = TRUE) %>%
     column_spec(1, width = "25em") %>%
     column_spec(2, width = "10em") %>%
-    #column_spec(4, width = "10em") %>%
+    column_spec(4, width = "10em") %>%
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -372,7 +372,7 @@ super <- data.frame(read.csv("supervision.csv", stringsAsFactors = FALSE))
 sum_sup <- tapply(as.numeric(super$Students), factor(super$Level), sum)
 ```
 
-In 2021, I received the Teacher of the Year award from Usocia for teaching "Practicum Data-Analyse", for which I developed a series of [YouTube tutorials](https://www.youtube.com/playlist?list=PLOQIOFZl7uYbfquGEtB9QheDZRKw9yeG6).
+My teaching is well-reviewed and in 2021 I received the Teacher of the Year award from the Usocia student association.
 Since my first teaching appointment in 2006, I have taught `r nrow(teach)` courses, to students from diverse backgrounds ranging from high-school to post-graduate (e.g., summer schools, pre-conference workshops). I have lectured in `r sum(teach$Hoorcolleges == "Yes")` courses, taught tutorials in `r sum(teach$Werkgroepen == "Yes")`, coordinated `r sum(teach$Coordinatie == "Yes")`, and developed the material for `r sum(teach$Ontwikkeling.herziening == "Yes")` courses.
 ```{r, eval = knitr::is_latex_output(), results="asis"}
 cat("I have supervised", paste0(paste0(sum_sup[1:(length(sum_sup)-1)], " ", names(sum_sup)[1:(length(sum_sup)-1)], collapse = ", "), ", and ", tail(sum_sup, 1), " ", tail(names(sum_sup), 1), collapse = ""), "students.")
