@@ -1,9 +1,11 @@
-"Institute","Country","Date","Details"
-"Turku University","FI","Oct 2022","Invited to give a keynote speech on open science"
-"University of Washington","USA","Apr 2022","Invited to give a guest lecture on machine learning methods for developmental psychology"
-"Oxford University","UK","Nov 2017","Invited to research meeting of Oxford Morals Project to develop of a scale for children’s moral development, and plan research for kindness.org"
-"University of Austin","USA","Mar 2017","Visited Stephen Russell’s SOGI: Health & Rights Lab, gave a lecture on MetaForest"
-"Oxford University","UK","Feb 2016","Visiting scholar at Institute of Cognitive and Evolutionary Anthropology (ICEA)"
-"University of New Orleans","USA","Mar 2014","Visited Elizabeth Shirtcliff's SPIT-Lab. Gave an invited lecture on my research on empathy and adolescent-parent conflict resolution, and received a one week training on hormone assays"
-"Erasmus Intensive Programme at Lund University","SE","Apr 2013","Taught Quantitative Methods and supervised field research at the Erasmus Intensive Program on Young People's Identity Formation, which involved scholars and students from NL, LT, SE, and IT"
-"Mykolas Romeris University","LT","Dec 2012","Visited to help develop the Erasmus Intensive Program on Young People's Identity Formation, an international honors course funded by the EC Lifelong Learning Programme, which involved scholars and students from NL, LT, SE, and IT"
+Institute,Country,Date,Details
+University of Washington,USA,Jun-23,Visiting scholar
+Max Planck Institut Berlin,DE,May-23,PhD Committee member and guest speaker
+Turku University,FI,Oct-22,Invited to give a keynote speech on open science
+University of Washington,USA,Apr-22,Invited to give a guest lecture on machine learning methods for developmental psychology
+Oxford University,UK,Nov-17,"Invited to research meeting of Oxford Morals Project to develop of a scale for children's moral development, and plan research for kindness.org"
+University of Austin,USA,Mar-17,"Visited Stephen Russell's SOGI: Health & Rights Lab, gave a lecture on MetaForest"
+Oxford University,UK,Feb-16,Visiting scholar at Institute of Cognitive and Evolutionary Anthropology (ICEA)
+University of New Orleans,USA,Mar-14,"Visited Elizabeth Shirtcliff's SPIT-Lab. Gave an invited lecture on my research on empathy and adolescent-parent conflict resolution, and received a one week training on hormone assays"
+Erasmus Intensive Programme at Lund University,SE,Apr-13,"Taught Quantitative Methods and supervised field research at the Erasmus Intensive Program on Young People's Identity Formation, which involved scholars and students from NL, LT, SE, and IT"
+Mykolas Romeris University,LT,Dec-12,"Visited to help develop the Erasmus Intensive Program on Young People's Identity Formation, an international honors course funded by the EC Lifelong Learning Programme, which involved scholars and students from NL, LT, SE, and IT"

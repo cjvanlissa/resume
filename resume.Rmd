@@ -33,11 +33,10 @@ header-includes:
 
 ```{r setup, include=FALSE}
 run_everything <- TRUE
-
 knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE, warning = FALSE)
 library(knitr)
-options(kableExtra.latex.load_packages = FALSE)
 library(kableExtra)
+options(kableExtra.latex.load_packages = FALSE)
 library(dplyr)
 library(DT)
 library(dlstats)
@@ -323,12 +322,12 @@ if(knitr::is_html_output()){
 ## Reviewer & Editorial experience
 
 ```{r}
-# library(rjson)
-# publons <- rjson::fromJSON(file = "publons.json")$records
-# publons <- data.frame(t(sapply(publons$review$per_journal, function(x){ c(x$name, x$count)})))
-# names(publons) <- c("Name", "N")
-# publons$Category <- "Journal"
-# write.csv(publons, "publons.csv", row.names = F)
+library(rjson)
+publons <- rjson::fromJSON(file = "publons.json")$records
+publons <- data.frame(t(sapply(publons$review$per_journal, function(x){ c(x$name, x$count)})))
+names(publons) <- c("Name", "N")
+publons$Category <- "Journal"
+write.csv(publons, "publons.csv", row.names = F)
 publons <- read.csv("publons.csv", stringsAsFactors = F)
 #publons$mergeid <- trimws(tolower(publons$Name))
 rev <- read.csv("review.csv", stringsAsFactors = FALSE, header = FALSE)
