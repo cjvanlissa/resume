@@ -1,7 +1,7 @@
 ---
 title: "Caspar J. van Lissa, PhD"
 subtitle: |
-  | Veni-funded associate professor of social data science, member of the Tilburg Young Academy, chair of the Open Science Community Tilburg, associate editor of Research Synthesis Methods.
+  | Veni-funded associate professor of social data science, board member of the Tilburg Young Academy, chair of the Open Science Community Tilburg, associate editor of Research Synthesis Methods.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
 date: "Last updated: `r Sys.Date()`"
 output:
@@ -158,7 +158,8 @@ pub$title[nchar(pub$title) > 150] <- paste0(substr(pub$title[nchar(pub$title) > 
 
 pub$year[is.na(pub$year)] <- "in press"
 # Filter out specific pubs
-pub <- pub[!(grepl("gorica", tolower(pub$title))), ]
+pub <- pub[!(grepl("(gorica|synthpop)", tolower(pub$title))), ]
+pub <- pub[!(grepl("mplusauto", tolower(pub$title))), ]
 
 pub <- pub[order(pub$year, decreasing = TRUE), c("author", "year", "title", "journal", "cites")]
 names(pub) <- c("Authors", "Year", "Title", "Publication", "Cited")
