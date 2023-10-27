@@ -6,7 +6,9 @@ subtitle: |
 date: "Last updated: `r Sys.Date()`"
 output:
   html_document:
+    theme: cosmo
     toc: true
+    toc_float: true
     toc_depth: 2
     includes:
       in_header: header.html
@@ -33,8 +35,49 @@ header-includes:
 - \usepackage{xcolor}
 ---
 
+<script>
+  $(document).ready(function() {
+    $('#TOC').parent().prepend('<div id=\"nav_logo\"><center><img src=\"face.png\" class=\"center\"></center></div><div id=\"contactinfo\"><b>Caspar Van Lissa, PhD</b></div>');
+  });
+</script>
+
+<style>
+#TOC {
+  margin-top: 270px;
+}
+#nav_logo {
+  position: fixed;
+  width: 230px;
+  margin-top: 20px;
+  justify-content: center;
+}
+#contactinfo {
+  position: fixed;
+  width: 230px;
+  margin-top: 250px;
+  justify-content: center;
+}
+</style>
+
+<!-- <style> -->
+<!-- #header { -->
+<!--   position: fixed; -->
+<!--   background: #ffffff; -->
+<!--   color: white; -->
+<!--   padding-bottom: 20px; -->
+<!-- } -->
+<!-- </style> -->
+<!-- <div id="spacerrr"> -->
+<!-- </div> -->
+
+<!-- <style> -->
+<!-- #spacerrr { -->
+<!--   margin-top: 250px; -->
+<!-- } -->
+<!-- </style> -->
+
 ```{r setup, include=FALSE}
-run_everything <- TRUE
+run_everything <- FALSE
 knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE, warning = FALSE)
 library(knitr)
 library(kableExtra)
