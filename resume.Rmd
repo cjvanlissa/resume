@@ -312,7 +312,7 @@ if(knitr::is_html_output()){
 }
 ```
 
-## Invited lectures, preconference workshops, summer schools 
+## Invited lectures and workshops
 <a name="original"></a>
 ```{r results = "asis", echo = FALSE}
 invited <- data.frame(read.csv("invited.csv", stringsAsFactors = FALSE))
