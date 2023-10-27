@@ -44,7 +44,7 @@ knit: |
 
 <script>
   $(document).ready(function() {
-    $('#TOC').parent().prepend('<div id=\"nav_logo\"><center><img src=\"https://github.com/cjvanlissa/resume/blob/master/face.png\" class=\"center\"></center></div><div id=\"contactinfo\"><b>Caspar Van Lissa, PhD</b></div>');
+    $('#TOC').parent().prepend('<div id=\"nav_logo\"><center><img src=\"/resume/assets/face.png\" class=\"center\"></center></div><div id=\"contactinfo\"><b>Caspar Van Lissa, PhD</b></div>');
   });
 </script>
 
