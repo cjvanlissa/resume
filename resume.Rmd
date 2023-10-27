@@ -33,11 +33,18 @@ header-includes:
 - \usepackage[normalem]{ulem}
 - \usepackage{makecell}
 - \usepackage{xcolor}
+knit: |
+  (function(input, ...) {
+    rmarkdown::render(input,
+                      output_format = "pdf_document",
+                      output_options = list(toc = "true", toc_depth = 2))
+    rmarkdown::render(input, output_dir = "docs", output_file = "index.html")
+  })
 ---
 
 <script>
   $(document).ready(function() {
-    $('#TOC').parent().prepend('<div id=\"nav_logo\"><center><img src=\"https://github.com/cjvanlissa/resume/blob/c00f69b0ae392ecd63d03faff55f95624b30574a/face.png\" class=\"center\"></center></div><div id=\"contactinfo\"><b>Caspar Van Lissa, PhD</b></div>');
+    $('#TOC').parent().prepend('<div id=\"nav_logo\"><center><img src=\"https://github.com/cjvanlissa/resume/blob/master/face.png\" class=\"center\"></center></div><div id=\"contactinfo\"><b>Caspar Van Lissa, PhD</b></div>');
   });
 </script>
 
