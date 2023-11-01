@@ -84,7 +84,7 @@ knit: |
 <!-- </style> -->
 
 ```{r setup, include=FALSE}
-run_everything <- FALSE
+run_everything <- TRUE
 knitr::opts_chunk$set(echo = FALSE, results = "asis", eval = TRUE, warning = FALSE)
 library(knitr)
 library(kableExtra)
