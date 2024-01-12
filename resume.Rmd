@@ -1,7 +1,7 @@
 ---
 title: "Caspar J. van Lissa, PhD"
 subtitle: |
-  | Veni-funded associate professor of social data science, board member of the Tilburg Young Academy, chair of the Open Science Community Tilburg, associate editor of Research Synthesis Methods.
+  | Associate professor of social data science (with *ius promovendi*), board member of the Tilburg Young Academy, chair of the Open Science Community Tilburg, associate editor of Research Synthesis Methods.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
 date: "Last updated: `r Sys.Date()`"
 output:
@@ -292,7 +292,7 @@ manage <- data.frame(read.csv("managerial.csv", stringsAsFactors = FALSE))
 manage <- manage[, c("Activity", "Start", "End", "Category")]
 
 if(knitr::is_html_output()){
-  manage %>%  DT::datatable(escape = F, options = list(dom = 't'), rownames = FALSE)
+  manage %>%  DT::datatable(escape = F, options = list(dom = 't', pageLength = nrow(manage)), rownames = FALSE)
 } else {
   manage$Activity <- gsub("<.+?>", "", manage$Activity)
   manage %>% 
