@@ -1,7 +1,7 @@
 ---
 title: "Caspar J. van Lissa, PhD"
 subtitle: |
-  | Associate professor of social data science (with *ius promovendi*), board member of the Tilburg Young Academy, chair of the Open Science Community Tilburg, associate editor of Research Synthesis Methods.
+  | Associate professor of social data science (with *ius promovendi*), Tilburg Young Academy board member, Open Science Community Tilburg chair, associate editor of Research Synthesis Methods.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
 date: "Last updated: `r Sys.Date()`"
 output:
@@ -181,10 +181,12 @@ id <- 'ub59lUMAAAAJ'
 scholar_profile <- get_profile(id)
 scholar_pubs <- get_publications(id)
 scholar_pubs[sapply(scholar_pubs, is.factor)] <- lapply(scholar_pubs[sapply(scholar_pubs, is.factor)], as.character)
+# scholar_pubs <- scholar_pubs[!grepl("Schmidt", scholar_pubs$title, ignore.case = T),]
 scholar_stats <- data.frame(total = scholar_profile$total_cites, 
                    G = calculate_g(scholar_pubs),
                    H = scholar_profile$h_index,
                    i10 = scholar_profile$i10_index)
+
 write.csv(scholar_stats, "scholar_stats.csv", row.names = FALSE)
 pub <- scholar_pubs
 pub <- pub[!grepl("correction", pub$title, ignore.case = TRUE), ]
@@ -258,7 +260,7 @@ write.csv(pack, "R-packages.csv", row.names = FALSE)
 
 ```{r results = "asis", echo = FALSE}
 pack <- data.frame(read.csv("R-packages.csv", stringsAsFactors = FALSE))
-pack$downloads[!is.na(pack$downloads)] <- paste0(pack$downloads[!is.na(pack$downloads)], " downloads. ")
+pack$downloads[!is.na(pack$downloads)] <- paste0(pack$downloads[!is.na(pack$downloads)], " downloads ")
 pack$downloads[is.na(pack$downloads)] <- ""
 pack$Downloads <- pack$downloads
 pack$Authors <- pack$authors
