@@ -179,7 +179,7 @@ library(scholar)
 id <- 'ub59lUMAAAAJ'
 ## Get his profile
 scholar_profile <- get_profile(id)
-scholar_pubs <- get_publications(id)
+scholar_pubs <- get_publications(id, flush = TRUE)
 scholar_pubs[sapply(scholar_pubs, is.factor)] <- lapply(scholar_pubs[sapply(scholar_pubs, is.factor)], as.character)
 # scholar_pubs <- scholar_pubs[!grepl("Schmidt", scholar_pubs$title, ignore.case = T),]
 scholar_stats <- data.frame(total = scholar_profile$total_cites, 
@@ -208,7 +208,12 @@ pub$author[num_authors > 4] <- gsub(";.+$", "; et al\\.", pub$author[num_authors
 pub$author <- gsub("van Lissa", "Van Lissa", pub$author)
 pub$author <- gsub(";", ",", pub$author)
 
+if(any(pub$journal == toupper(pub$journal))){
+  pub$journal[which(pub$journal == toupper(pub$journal))] <- stringr::str_to_title(pub$journal[which(pub$journal == toupper(pub$journal))])
+}
+
 pub$title[nchar(pub$title) > 150] <- paste0(substr(pub$title[nchar(pub$title) > 150], 1, 149), "…")
+
 
 pub$year[is.na(pub$year)] <- "in press"
 # Filter out specific pubs
