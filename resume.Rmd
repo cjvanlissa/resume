@@ -223,6 +223,9 @@ pub <- pub[!(grepl("mplusauto", tolower(pub$title))), ]
 pub <- pub[order(pub$year, decreasing = TRUE), c("author", "year", "title", "journal", "cites")]
 names(pub) <- c("Authors", "Year", "Title", "Publication", "Cited")
 pub[grepl("schumpe", pub$Authors, ignore.case = T), "Authors"] <- "Schumpe, P. C. C., Van Lissa, C. J. (joint 1st), et al."
+
+pub$Publication[grepl("team science", pub$Title, ignore.case = T)] <- "*Internal Document*"
+
 write.csv(pub, "My publications.csv", row.names = FALSE)
 ```
 
@@ -276,7 +279,8 @@ if(knitr::is_html_output()){
   pack$Outlet <- paste0('<tt>', pack$repo, '</tt>')
   
   pack[,c("Authors", "Title", "Downloads", "Outlet")] %>%
-    DT::datatable(escape = FALSE, options = list(dom = 't'))
+    DT::datatable(escape = FALSE, options = list(dom = 't',
+                                                 pageLength = nrow(pack)))
 } else {
   pack$Title <- pack$title
   pack$Outlet <- pack$repo
