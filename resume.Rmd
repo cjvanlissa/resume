@@ -268,13 +268,13 @@ write.csv(pack, "R-packages.csv", row.names = FALSE)
 
 ```{r results = "asis", echo = FALSE}
 pack <- data.frame(read.csv("R-packages.csv", stringsAsFactors = FALSE))
-pack$downloads[!is.na(pack$downloads)] <- paste0(pack$downloads[!is.na(pack$downloads)], " downloads ")
 pack$downloads[is.na(pack$downloads)] <- ""
 pack$Downloads <- pack$downloads
 pack$Authors <- pack$authors
 rownames(pack) <- NULL
 
 if(knitr::is_html_output()){
+  pack$Downloads <- paste0(pack$Downloads[!is.na(pack$Downloads)], " downloads ")
   pack$Title <- paste0('<a href = "', pack$url, '">', pack$title, '</a>')
   pack$Outlet <- paste0('<tt>', pack$repo, '</tt>')
   
@@ -286,12 +286,11 @@ if(knitr::is_html_output()){
   pack$Outlet <- pack$repo
   #pack$Title <- paste0('[', pack$title, '](', pack$url, ")")
   #pack$Outlet <- paste0('\texttt{', pack$repo, '}')
-  
   pack[,c("Authors", "Title", "Downloads", "Outlet")] %>% 
     kable("latex", booktabs = TRUE) %>%
-    column_spec(1, width = "25em") %>%
+    column_spec(1, width = "22em") %>%
     column_spec(2, width = "10em") %>%
-    column_spec(4, width = "10em") %>%
+    column_spec(4, width = "5em") %>%
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
