@@ -29,6 +29,13 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
+      - name: Install pdflatex
+        run: sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+
+      - name: Render resume
+        run: rmarkdown::render("resume.Rmd", output_format = "pdf_document")
+        shell: Rscript {0}
+        
       - name: Render resume
         run: rmarkdown::render("resume.Rmd", output_format = "html_document")
         shell: Rscript {0}
