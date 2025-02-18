@@ -27,7 +27,7 @@ jobs:
       - uses: r-lib/actions/setup-renv@v2
 
       - name: Render resume
-        run: rmarkdown::render("resume.Rmd", output_format = "all")
+        run: rmarkdown::render("resume.Rmd", output_format = "html_document")
         shell: Rscript {0}
 
       - name: Copy resume
