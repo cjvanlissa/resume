@@ -94,6 +94,12 @@ library(DT)
 library(dlstats)
 library(renv)
 
+clean_titles <- function(x) {
+  x <- gsub("_", " ", x)
+  x <- gsub("\\b([a-z])", "\\U\\1", x, perl = TRUE)
+  x
+}
+
 print_cv <- function(table, ...){
   Args <- as.list(match.call()[-c(1, 2)])
   cat(apply(table, 1, function(x){
@@ -145,10 +151,10 @@ exp <- exp[order(gsub("^\\w{3} ", "", exp$Begin), decreasing = TRUE), ]
 
 row.names(exp) <- NULL
 if(knitr::is_html_output()){
-  exp %>% select(Employer, Department, Position, Begin, End, Description) %>% dt_wrap("Description", options = list(dom = 't', "pageLength" = 40))
+  exp |> select(Employer, Department, Position, Begin, End, Description) |> dt_wrap("Description", options = list(dom = 't', "pageLength" = 40))
 } else {
-  exp %>% select(Employer, Department, Position, Begin, End) %>% kable("latex", booktabs = TRUE) %>%
-  column_spec(column = c(1:3), width = "12em") %>%
+  exp |> select(Employer, Department, Position, Begin, End) |> kable("latex", booktabs = TRUE) |>
+  column_spec(column = c(1:3), width = "12em") |>
 kable_styling(latex_options = "striped", position = "left")
 }
 
@@ -162,13 +168,13 @@ edu <- read.csv("education.csv", stringsAsFactors = FALSE)
 row.names(edu) <- NULL
 
 if(knitr::is_html_output()){
-  edu %>%
-    select(Institute,Field, Degree, Date, Description) %>%
+  edu |>
+    select(Institute,Field, Degree, Date, Description) |>
     dt_wrap("Description", options = list(dom = 't', "pageLength" = 40))
 } else {
-  edu %>%
-  select(Institute,Field, Degree, Date) %>% 
-    kable("latex", booktabs = TRUE) %>%
+  edu |>
+  select(Institute,Field, Degree, Date) |> 
+    kable("latex", booktabs = TRUE) |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -208,9 +214,9 @@ pub$author[num_authors > 4] <- gsub(";.+$", "; et al\\.", pub$author[num_authors
 pub$author <- gsub("van Lissa", "Van Lissa", pub$author)
 pub$author <- gsub(";", ",", pub$author)
 
-if(any(pub$journal == toupper(pub$journal))){
-  pub$journal[which(pub$journal == toupper(pub$journal))] <- stringr::str_to_title(pub$journal[which(pub$journal == toupper(pub$journal))])
-}
+# if(any(pub$journal == toupper(pub$journal))){
+#   pub$journal[which(pub$journal == toupper(pub$journal))] <- str_to_title(pub$journal[which(pub$journal == toupper(pub$journal))])
+# }
 
 pub$title[nchar(pub$title) > 150] <- paste0(substr(pub$title[nchar(pub$title) > 150], 1, 149), "…")
 
@@ -238,18 +244,18 @@ if(knitr::is_html_output()){
   pub$Publication[!pub$Publication == ""] <- paste0('<i>', pub$Publication[!pub$Publication == ""], '</i>')
   pub$Publication[grepl("(mplusautomation|bain|'metaforest'|gorica)", tolower(pub$Title))] <- "<tt>CRAN</tt>"
   rownames(pub) <- NULL
-  pub %>% DT::datatable(escape=F, options = list(pageLength = nrow(pub)))
+  pub |> DT::datatable(escape=F, options = list(pageLength = nrow(pub)))
 } else {
   #pub$Publication[!pub$Publication == ""] <- paste0('*', pub$Publication[!pub$Publication == ""], '*')
   #pub$Authors <- gsub("&", "\\&", pub$Authors)
   #pub$Publication[!grepl("(r package version|^package)", tolower(pub$Title))] <- cell_spec(pub$Publication[!grepl("(r package version|^package)", tolower(pub$Title))], italic = TRUE, format = "latex")
   pub$Publication[grepl("(r package version|^package)", tolower(pub$Title))] <- "CRAN"
   rownames(pub) <- NULL
-  pub %>% 
-    kable("latex", booktabs = TRUE, longtable = TRUE) %>% #
-    column_spec(1, width = "10em") %>%
-    column_spec(3, width = "20em") %>%
-    column_spec(4, width = "10em") %>%
+  pub |> 
+    kable("latex", booktabs = TRUE, longtable = TRUE) |> #
+    column_spec(1, width = "10em") |>
+    column_spec(3, width = "20em") |>
+    column_spec(4, width = "10em") |>
     kable_styling(latex_options = c("repeat_header", "striped"), position = "left")
 }
 ```
@@ -278,7 +284,7 @@ if(knitr::is_html_output()){
   pack$Title <- paste0('<a href = "', pack$url, '">', pack$title, '</a>')
   pack$Outlet <- paste0('<tt>', pack$repo, '</tt>')
   
-  pack[,c("Authors", "Title", "Downloads", "Outlet")] %>%
+  pack[,c("Authors", "Title", "Downloads", "Outlet")] |>
     DT::datatable(escape = FALSE, options = list(dom = 't',
                                                  pageLength = nrow(pack)))
 } else {
@@ -286,11 +292,11 @@ if(knitr::is_html_output()){
   pack$Outlet <- pack$repo
   #pack$Title <- paste0('[', pack$title, '](', pack$url, ")")
   #pack$Outlet <- paste0('\texttt{', pack$repo, '}')
-  pack[,c("Authors", "Title", "Downloads", "Outlet")] %>% 
-    kable("latex", booktabs = TRUE) %>%
-    column_spec(1, width = "22em") %>%
-    column_spec(2, width = "10em") %>%
-    column_spec(4, width = "5em") %>%
+  pack[,c("Authors", "Title", "Downloads", "Outlet")] |> 
+    kable("latex", booktabs = TRUE) |>
+    column_spec(1, width = "22em") |>
+    column_spec(2, width = "10em") |>
+    column_spec(4, width = "5em") |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -302,12 +308,12 @@ manage <- data.frame(read.csv("managerial.csv", stringsAsFactors = FALSE))
 manage <- manage[, c("Activity", "Start", "End", "Category")]
 
 if(knitr::is_html_output()){
-  manage %>%  DT::datatable(escape = F, options = list(dom = 't', pageLength = nrow(manage)), rownames = FALSE)
+  manage |>  DT::datatable(escape = F, options = list(dom = 't', pageLength = nrow(manage)), rownames = FALSE)
 } else {
   manage$Activity <- gsub("<.+?>", "", manage$Activity)
-  manage %>% 
-    kable("latex", booktabs = TRUE) %>%
-    column_spec(1, width = "25em") %>%
+  manage |> 
+    kable("latex", booktabs = TRUE) |>
+    column_spec(1, width = "25em") |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -318,13 +324,13 @@ if(knitr::is_html_output()){
 int <- data.frame(read.csv("international.csv", stringsAsFactors = FALSE))
 
 if(knitr::is_html_output()){
-  int %>% 
+  int |> 
     dt_wrap("Details", options = list(dom = 't', "pageLength" = 40))
 } else {
-  int %>% 
-    kable("latex", booktabs = TRUE) %>%
-    column_spec(1, width = "15em") %>%
-    column_spec(4, width = "22em") %>%
+  int |> 
+    kable("latex", booktabs = TRUE) |>
+    column_spec(1, width = "15em") |>
+    column_spec(4, width = "22em") |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -336,13 +342,13 @@ invited <- data.frame(read.csv("invited.csv", stringsAsFactors = FALSE))
 rownames(invited) <- NULL
 
 if(knitr::is_html_output()){
-  invited %>% 
-    select(Institute, City, Country, Year, Topic) %>%
+  invited |> 
+    select(Institute, City, Country, Year, Topic) |>
     dt_wrap("Topic", options = list(dom = 't', "pageLength" = 40))
 } else {
-  invited %>%
-    select(Institute, City, Country, Year) %>%
-    kable("latex", booktabs = TRUE) %>%
+  invited |>
+    select(Institute, City, Country, Year) |>
+    kable("latex", booktabs = TRUE) |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -356,10 +362,10 @@ grant$Date <- as.Date(grant$Date, format = "%d-%m-%Y")
 grant$Date <- format.Date(grant$Date, "%b %Y")
 
 if(knitr::is_html_output()){
-  grant %>% DT::datatable(escape = FALSE,options = list(dom = 't'), rownames = FALSE)
+  grant |> DT::datatable(escape = FALSE,options = list(dom = 't'), rownames = FALSE)
 } else {
-  grant %>%
-    kable("latex", booktabs = TRUE) %>%
+  grant |>
+    kable("latex", booktabs = TRUE) |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -371,13 +377,13 @@ collab <- data.frame(read.csv("Collaborations.csv", stringsAsFactors = FALSE))
 names(collab)[3] <- "Key collaborator"
 
 if(knitr::is_html_output()){
-  collab %>%  
-    select(Organization, "Key collaborator", Purpose) %>%
+  collab |>  
+    select(Organization, "Key collaborator", Purpose) |>
     dt_wrap("Purpose", options = list(dom = 't', "pageLength" = 40))
 } else {
-  collab %>%  
-    select(Organization, "Key collaborator") %>%
-    kable("latex", booktabs = TRUE) %>%
+  collab |>  
+    select(Organization, "Key collaborator") |>
+    kable("latex", booktabs = TRUE) |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -410,12 +416,12 @@ cat("<summary>Click here for a detailed overview of reviewing activities</summar
 ```
 ```{r results = "asis", echo = FALSE, eval = knitr::is_html_output()}
 if(knitr::is_html_output()){
-  rev %>%
-    kable("html", escape=F) %>%
+  rev |>
+    kable("html", escape=F) |>
     kable_styling(bootstrap_options = c("striped", position = "left", "hover"))
 } else {
-  rev %>%
-    kable("latex", booktabs = TRUE) %>%
+  rev |>
+    kable("latex", booktabs = TRUE) |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -451,17 +457,17 @@ teach[sapply(teach, is.logical)] <- lapply(teach[sapply(teach, is.logical)], fun
 
 if(knitr::is_html_output()){
   teach[[14]] <- NULL
-  teach %>%
-    kable("html", escape=F) %>% 
-    add_header_above(c("Course details" = 4, "Responsibilities" = 8, " " =1)) %>%
+  teach |>
+    kable("html", escape=F) |> 
+    add_header_above(c("Course details" = 4, "Responsibilities" = 8, " " =1)) |>
     kable_styling(bootstrap_options = c("striped", position = "left", "hover"))
 } else {
   teach[c(13:14)] <- NULL
   names(teach) <- c("Course", "Year", "Sessions", "Students", "HC", "WC", "Coord", "Org", "Syll", "PPT", "Apps", "Dev")
-   teach %>%
-    kable("latex", booktabs = TRUE) %>%
-    kable_styling(latex_options = c("scale_down", "striped"), position = "left") %>%
-    add_footnote("HC: Lecture, WC: Tutorial, Coord: Coordination, Org: Organization, Syll: Made syllabus, PPT: Made presentation, Apps: Made digital aids, Dev: Conducted course development", notation="none")# %>%
+   teach |>
+    kable("latex", booktabs = TRUE) |>
+    kable_styling(latex_options = c("scale_down", "striped"), position = "left") |>
+    add_footnote("HC: Lecture, WC: Tutorial, Coord: Coordination, Org: Organization, Syll: Made syllabus, PPT: Made presentation, Apps: Made digital aids, Dev: Conducted course development", notation="none")# |>
      #landscape()
 }
 ```
@@ -479,12 +485,12 @@ super$Level <- ordered(super$Level, levels = c("PhD", "Master", "Bachelor"))
 super <- super[order(super$Level), ]
 
 if(knitr::is_html_output()){
-  super[, c("Students", "Description", "Details", "Institute", "Level")] %>%
-    kable("html", escape=F, row.names = FALSE) %>% 
+  super[, c("Students", "Description", "Details", "Institute", "Level")] |>
+    kable("html", escape=F, row.names = FALSE) |> 
     kable_styling(bootstrap_options = c("striped", position = "left", "hover"))
 } else {
-  super[, c("Students", "Description", "Details", "Institute", "Level")] %>%
-    kable("latex", booktabs = TRUE) %>%
+  super[, c("Students", "Description", "Details", "Institute", "Level")] |>
+    kable("latex", booktabs = TRUE) |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -509,13 +515,13 @@ conf <- conf[order(conf$Date, decreasing = TRUE), c("Organization", "City", "Cou
 rownames(conf) <- NULL
 
 if(knitr::is_html_output()){
-  conf %>%
-    kable("html", escape=F) %>% 
+  conf |>
+    kable("html", escape=F) |> 
     kable_styling(bootstrap_options = c("striped", position = "left", "hover"))
 
 } else {
-   conf %>%
-    kable("latex", booktabs = TRUE) %>%
+   conf |>
+    kable("latex", booktabs = TRUE) |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```
@@ -535,13 +541,13 @@ media$Date <- as.Date(media$Date, format = "%d-%m-%Y")
 media <- media[order(media$Date, decreasing = TRUE), ]
 row.names(media) <- NULL
 if(knitr::is_html_output()){
-  media %>%
-    select(Outlet, Type, Date, Country, Topic) %>%
+  media |>
+    select(Outlet, Type, Date, Country, Topic) |>
     dt_wrap("Topic", options = list(dom = 't', "pageLength" = 40))
 } else {
-  media %>%
-    select(Outlet, Type, Date, Country) %>%
-    kable("latex", booktabs = TRUE) %>%
+  media |>
+    select(Outlet, Type, Date, Country) |>
+    kable("latex", booktabs = TRUE) |>
     kable_styling(latex_options = "striped", position = "left")
 }
 ```

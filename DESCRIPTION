@@ -1,0 +1,11 @@
+Imports:
+    worcs (>= 0.1.16),
+    gert,
+    gh,
+    knitr,
+    rmarkdown,
+    dlstats,
+    DT,
+    kableExtra,
+    scholar,
+    rjson
