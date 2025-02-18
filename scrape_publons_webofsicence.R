@@ -1,6 +1,6 @@
-library(pdftools)
-
-txt <- pdftools::pdf_text("C:/tmp/CasparvanLissa_Web_of_Science_Researcher_CV_20250212 (1).pdf")
+# library(pdftools)
+# 
+# txt <- pdftools::pdf_text("C:/tmp/CasparvanLissa_Web_of_Science_Researcher_CV_20250212 (1).pdf")
 
 # copy-paste rows with reviews
 txt <- readClipboard()

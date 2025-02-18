@@ -742,9 +742,15 @@
     },
     "igraph": {
       "Package": "igraph",
-      "Version": "2.1.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
+      "Version": "2.1.4.9010",
+      "Source": "git",
+      "RemoteType": "git",
+      "RemoteUrl": "https://github.com/igraph/rigraph",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "igraph",
+      "RemoteRepo": "rigraph",
+      "RemoteRef": "main",
+      "RemoteSha": "0df2bfd978dd3acbe56fec862e924ab01fbc27cd",
       "Requirements": [
         "Matrix",
         "R",
@@ -761,7 +767,7 @@
         "utils",
         "vctrs"
       ],
-      "Hash": "9a93b743b2461ba06ba3b5df12011145"
+      "Hash": "3605ae7df4633d2f0018766f94ee2acb"
     },
     "ini": {
       "Package": "ini",
