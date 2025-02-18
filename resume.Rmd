@@ -3,7 +3,7 @@ title: "Caspar J. van Lissa, PhD"
 subtitle: |
   | Vidi-funded associate professor of social data science (with *ius promovendi*), Tilburg Young Academy board member, Open Science Community Tilburg chair, associate editor of Research Synthesis Methods.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
-date: "Last updated: `r Sys.Date()`"
+  | `r if(!knitr::is_latex_output()){'[Download PDF](https://raw.githubusercontent.com/cjvanlissa/resume/gh-pages/Van_Lissa_-_Resume.pdf)'}`
 output:
   html_document:
     theme: cosmo
@@ -82,6 +82,9 @@ knit: |
 <!--   margin-top: 250px; -->
 <!-- } -->
 <!-- </style> -->
+
+
+<!-- date: "`r ifelse(interactive(), 'Manually', 'Automatically')` updated: `r Sys.Date()`" -->
 
 ```{r setup, include=FALSE}
 run_everything <- TRUE
