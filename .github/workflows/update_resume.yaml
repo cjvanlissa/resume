@@ -28,7 +28,7 @@ jobs:
           use-public-rspm: true
 
       - name: Install pdflatex
-        run: sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra libcurl4-openssl-dev
+        run: sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra libcurl4-openssl-dev libfontconfig1-dev
 
       - uses: r-lib/actions/setup-renv@v2
 
