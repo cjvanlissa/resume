@@ -27,10 +27,10 @@ jobs:
         with:
           use-public-rspm: true
 
-      - uses: r-lib/actions/setup-renv@v2
-
       - name: Install pdflatex
-        run: sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+        run: sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra libcurl4-openssl-dev
+
+      - uses: r-lib/actions/setup-renv@v2
 
       - name: Render pdf
         run: rmarkdown::render("resume.Rmd", output_format = "pdf_document")
