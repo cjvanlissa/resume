@@ -16,3 +16,5 @@ private*.Rmd
 uhd.Rmd
 uhd.html
 Inductive_deductive 5.png
+!scholar_pubs.RData
+!scholar_profile.RData

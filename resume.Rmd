@@ -187,8 +187,19 @@ if(knitr::is_html_output()){
 library(scholar)
 id <- 'ub59lUMAAAAJ'
 ## Get his profile
-scholar_profile <- get_profile(id)
-scholar_pubs <- get_publications(id, flush = TRUE)
+
+scholar_profile <- try(get_profile(id), silent = TRUE)
+if(inherits(scholar_profile, "try-error") | isTRUE(is.na(scholar_profile))){
+  scholar_profile <- readRDS("scholar_profile.RData")
+} else {
+  saveRDS(scholar_profile, "scholar_profile.RData")
+}
+scholar_pubs <- try(get_publications(id, flush = TRUE), silent = TRUE)
+if(inherits(scholar_pubs, "try-error") | isTRUE(is.na(scholar_pubs))){
+  scholar_pubs <- readRDS("scholar_pubs.RData")
+} else {
+  saveRDS(scholar_pubs, "scholar_pubs.RData")
+}
 scholar_pubs[sapply(scholar_pubs, is.factor)] <- lapply(scholar_pubs[sapply(scholar_pubs, is.factor)], as.character)
 # scholar_pubs <- scholar_pubs[!grepl("Schmidt", scholar_pubs$title, ignore.case = T),]
 scholar_stats <- data.frame(total = scholar_profile$total_cites, 
