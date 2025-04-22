@@ -32,26 +32,30 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: Render pdf
-        run: rmarkdown::render("resume.Rmd", output_format = "pdf_document")
+      - name: test_error
+        run: print(scholar::get_profile('ub59lUMAAAAJ'))
         shell: Rscript {0}
-        
-      - name: Render html
-        run: rmarkdown::render("resume.Rmd", output_format = "html_document")
-        shell: Rscript {0}
-
-      - name: Copy pdf
-        run: file.copy("resume.pdf", file.path("docs", "Van_Lissa_-_Resume.pdf"), overwrite = TRUE)
-        shell: Rscript {0}
-
-      - name: Copy html
-        run: file.copy("resume.html", file.path("docs", "index.html"), overwrite = TRUE)
-        shell: Rscript {0}
-        
-      - name: Deploy to GitHub pages 🚀
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4.7.2
-        with:
-          clean: false
-          branch: gh-pages
-          folder: docs
+      
+      # - name: Render pdf
+      #   run: rmarkdown::render("resume.Rmd", output_format = "pdf_document")
+      #   shell: Rscript {0}
+      #   
+      # - name: Render html
+      #   run: rmarkdown::render("resume.Rmd", output_format = "html_document")
+      #   shell: Rscript {0}
+      # 
+      # - name: Copy pdf
+      #   run: file.copy("resume.pdf", file.path("docs", "Van_Lissa_-_Resume.pdf"), overwrite = TRUE)
+      #   shell: Rscript {0}
+      # 
+      # - name: Copy html
+      #   run: file.copy("resume.html", file.path("docs", "index.html"), overwrite = TRUE)
+      #   shell: Rscript {0}
+      #   
+      # - name: Deploy to GitHub pages 🚀
+      #   if: github.event_name != 'pull_request'
+      #   uses: JamesIves/github-pages-deploy-action@v4.7.2
+      #   with:
+      #     clean: false
+      #     branch: gh-pages
+      #     folder: docs
