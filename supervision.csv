@@ -1,5 +1,5 @@
 Students,Description,Details,Institute,Level,Begin,End,
-3,Research master's theses (Applied Data Science),"Thesis supervisor",Utrecht University,Master,,,
+3,Research master's theses (Applied Data Science),Thesis supervisor,Utrecht University,Master,,,
 10,Research master's student internships (Development And Socialization in Childhood and Adolescence),"Instructed and supervised the design of stimulus materials and online questionnaires, field visits, and content coding videos of parent-adolescent conflict discussions.",Utrecht University,Master,,,
 8,academic master's theses (Orthopedagogics),Thesis supervisor,Utrecht University,Master,,,
 1,research assistant,Supervised the creation of online questionnaires,Utrecht University,Master,,,
@@ -20,9 +20,11 @@ Students,Description,Details,Institute,Level,Begin,End,
 1,Research assistants,VENI,Utrecht University,Master,30/03/2022,31-12-2022,Daniel Anadria
 1,Research assistants,VENI,Tilburg University,Master,10/01/2023,26-04-2023,Alon Pahlich
 1,PhD student,Promotor,Tilburg University,PhD,1-1-2023,31-12-2026,Rasoul Norouzi
-3,Research assistants,Team Science project,Tilburg University,Bachelor,1/10/2023,31/12/2023
+3,Research assistants,Team Science project,Tilburg University,Bachelor,1/10/2023,31/12/2023,
 1,bachelor's theses (Methodology & Statistics),Thesis supervisor,Tilburg University,Bachelor,01-01-2025,01-07-2025,Cristian Bitca
 2,bachelor's theses (Data Science),Thesis supervisor,Eindhoven University,Bachelor,01-09-2025,31-12-2025,Elvir Nikq and Sabin Tarus
-1,master's thesis (Methodology & Statistics),Thesis supervisor,Tilburg University,Master,01-09-2025,31-12-2025,Amirali Rezazadeh
+1,master's thesis (Methodology & Statistics),Thesis supervisor,Tilburg University,Master,01-02-2026,31-06-2026,Amirali Rezazadeh
 1,PhD student,Promotor,Tilburg University,PhD,1-10-2025,31-9-2029,Ward Eiling
 1,Research assistant,VIDI,Tilburg University,Master,1-10-2025,31-9-2026,Leonhard Volz
+1,PhD student,Co-promotor,TU Eindhoven,PhD,1-10-2025,31-9-2029,Raphael Merz
+1,Research assistant,Contributing to my VIDI project,Tilburg University,Master,01-09-2025,31-12-2025,Amirali Rezazadeh
