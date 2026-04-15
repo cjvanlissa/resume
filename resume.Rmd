@@ -1,7 +1,7 @@
 ---
 title: "Caspar J. van Lissa, PhD"
 subtitle: |
-  | Vidi-funded associate professor of social data science (with *ius promovendi*), Tilburg Young Academy board member, Open Science Community Tilburg chair, associate editor of Research Synthesis Methods.
+  | Associate professor of social data science (with *ius promovendi*), PI of [INSIGHT Lab](https://cjvanlissa.github.io/insight_lab), Tilburg Young Academy board member, Open Science Community Tilburg chair, associate editor of Research Synthesis Methods.
   | `r if(knitr::is_latex_output()){'This is an automatic summary of my interactive online resume at https://cjvanlissa.github.io/resume'}`
   | `r if(!knitr::is_latex_output()){'[Download PDF](https://raw.githubusercontent.com/cjvanlissa/resume/gh-pages/Van_Lissa_-_Resume.pdf)'}`
 output:
